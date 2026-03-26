@@ -1,53 +1,76 @@
 import React from "react";
 
 export default function BrandMarquee() {
+  // Generate logo paths from 1 to 61
+  const logos = Array.from({ length: 61 }, (_, i) => `/Images/Brandlogos/logo ${i + 1}.png`);
+
   return (
-    <div className="mt-16 md:mt-24 w-full max-w-7xl mx-auto overflow-hidden flex items-center justify-center bg-transparent relative z-10 px-4 sm:px-8">
-      {/* Ticker Container with fade-out edges */}
-      <div 
-        className="flex w-full overflow-hidden" 
-        style={{ maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)", WebkitMaskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)" }}
-      >
-        
-        {/* Animated Track */}
-        <div className="flex animate-marquee min-w-max gap-12 sm:gap-24 items-center opacity-60 hover:opacity-100 transition-opacity duration-500 py-4">
+    <div className="my-16 md:my-28 w-[95%] md:w-[96%] mx-auto overflow-hidden flex flex-col items-center justify-center py-20 md:py-32 relative z-10 rounded-[2rem] md:rounded-[4rem] border border-white/5 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.8)] bg-[#050505]">
+      
+      {/* Wow-factor glowing animated background */}
+      <div className="absolute top-[-10%] left-[-10%] w-[60%] h-[120%] bg-white/[0.03] blur-[140px] rounded-full pointer-events-none animate-pulse"></div>
+      <div className="absolute bottom-[-10%] right-[-10%] w-[60%] h-[120%] bg-white/[0.04] blur-[140px] rounded-full pointer-events-none animate-pulse" style={{ animationDelay: "2s" }}></div>
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none opacity-50" style={{ maskImage: "radial-gradient(ellipse 70% 50% at 50% 50%, #000 40%, transparent 100%)", WebkitMaskImage: "radial-gradient(ellipse 70% 50% at 50% 50%, #000 40%, transparent 100%)" }}></div>
+
+      <div className="relative z-20 flex flex-col items-center w-full">
+        <p className="text-sm md:text-base font-bold uppercase tracking-[0.4em] mb-16 text-center bg-clip-text text-transparent bg-gradient-to-r from-gray-500 via-white to-gray-500">
+          Trusted by 60+ innovative teams universally
+        </p>
+
+        {/* Ticker Container with fade-out edges designed for dark bg */}
+        <div 
+          className="flex w-full overflow-hidden" 
+          style={{ maskImage: "linear-gradient(to right, transparent, black 15%, black 85%, transparent)", WebkitMaskImage: "linear-gradient(to right, transparent, black 15%, black 85%, transparent)" }}
+        >
           
-          {/* Group 1 */}
-          <div className="flex gap-12 sm:gap-24 items-center">
-            <span className="text-3xl font-bold italic tracking-tighter">Sass</span>
-            <span className="text-gray-400 font-bold">+</span>
-            <span className="text-3xl font-bold font-serif opacity-90">ububa</span>
-            <span className="text-gray-400 font-bold">+</span>
-            <span className="text-3xl font-extrabold tracking-widest lowercase">digg</span>
-            <span className="text-gray-400 font-bold">+</span>
-            <span className="text-3xl font-medium tracking-tight text-gray-800 relative inline-flex items-center">
-              <div className="w-4 h-4 border-2 border-gray-800 rounded-full mr-2 opacity-70"></div>
-              Cinfores
-            </span>
-            <span className="text-gray-400 font-bold">+</span>
-            <span className="text-3xl font-semibold opacity-80 flex items-center pr-4">☕ Java</span>
+          {/* Animated Track */}
+          <div className="flex animate-[marquee_180s_linear_infinite] min-w-max items-center hover:[animation-play-state:paused]">
+            
+            {/* Group 1 */}
+            <div className="flex items-center gap-12 md:gap-24 pl-6 md:pl-12">
+              {logos.map((src, idx) => (
+                <React.Fragment key={idx}>
+                  <div className="relative w-[220px] h-[120px] md:w-[320px] md:h-[160px] flex-shrink-0 flex items-center justify-center cursor-pointer transition-all duration-500 hover:scale-[1.15] group">
+                     {/* Hover Glow Behind Logo */}
+                     <div className="absolute inset-0 bg-white/5 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                     <img 
+                       src={src} 
+                       alt={`Brand Logo ${idx + 1}`} 
+                       className="max-w-[85%] max-h-[85%] object-contain opacity-60 group-hover:opacity-100 group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.6)] transition-all duration-500 relative z-10"
+                     />
+                  </div>
+                </React.Fragment>
+              ))}
+            </div>
+
+            {/* Group 2 (Duplicate for Seamless Loop) */}
+            <div className="flex items-center gap-12 md:gap-24 pl-12 md:pl-24 pr-6 md:pr-12" aria-hidden="true">
+              {logos.map((src, idx) => (
+                <React.Fragment key={`dup-${idx}`}>
+                  <div className="relative w-[220px] h-[120px] md:w-[320px] md:h-[160px] flex-shrink-0 flex items-center justify-center cursor-pointer transition-all duration-500 hover:scale-[1.15] group">
+                     {/* Hover Glow Behind Logo */}
+                     <div className="absolute inset-0 bg-white/5 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                     <img 
+                       src={src} 
+                       alt={`Brand Logo ${idx + 1}`} 
+                       className="max-w-[85%] max-h-[85%] object-contain opacity-60 group-hover:opacity-100 group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.6)] transition-all duration-500 relative z-10"
+                     />
+                  </div>
+                </React.Fragment>
+              ))}
+            </div>
+
           </div>
-
-          <span className="text-gray-400 font-bold">+</span>
-
-          {/* Group 2 (Duplicate for Seamless Loop) */}
-          <div className="flex gap-12 sm:gap-24 items-center" aria-hidden="true">
-            <span className="text-3xl font-bold italic tracking-tighter">Sass</span>
-            <span className="text-gray-400 font-bold">+</span>
-            <span className="text-3xl font-bold font-serif opacity-90">ububa</span>
-            <span className="text-gray-400 font-bold">+</span>
-            <span className="text-3xl font-extrabold tracking-widest lowercase">digg</span>
-            <span className="text-gray-400 font-bold">+</span>
-            <span className="text-3xl font-medium tracking-tight text-gray-800 relative inline-flex items-center">
-              <div className="w-4 h-4 border-2 border-gray-800 rounded-full mr-2 opacity-70"></div>
-              Cinfores
-            </span>
-            <span className="text-gray-400 font-bold">+</span>
-            <span className="text-3xl font-semibold opacity-80 flex items-center pr-12">☕ Java</span>
-          </div>
-
         </div>
       </div>
+
+      {/* Marquee Animation Keyframes */}
+      <style dangerouslySetInnerHTML={{__html: `
+        @keyframes marquee {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+      `}} />
     </div>
   );
 }

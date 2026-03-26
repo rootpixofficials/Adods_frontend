@@ -26,7 +26,7 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
                <li>
-                <Link href="/whoweare" className="text-gray-400 hover:text-black transition-colors">
+                <Link href="/" className="text-gray-400 hover:text-black transition-colors">
                   Home
                 </Link>
               </li>
@@ -43,6 +43,11 @@ export default function Footer() {
               <li>
                 <Link href="/ourworks" className="text-gray-400 hover:text-black transition-colors">
                   Our Works
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog" className="text-gray-400 hover:text-black transition-colors border-b border-transparent hover:border-black inline-block">
+                  Blog
                 </Link>
               </li>
               <li>

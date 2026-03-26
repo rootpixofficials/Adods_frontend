@@ -5,6 +5,8 @@ import About from "./components/Home/About";
 import HowWeWork from "./components/Home/HowWeWork";
 import WhatWeDo from "./components/Home/WhatWeDo";
 import Projects from "./components/Home/Projects";
+import Testimonial from "./components/Home/Testimonial";
+import CTA from "./components/Home/CTA";
 
 export default function Home() {
   return (
@@ -14,6 +16,8 @@ export default function Home() {
       <HowWeWork/>
       <WhatWeDo/>
       <Projects/>
+      <Testimonial/>
+      <CTA/>
     </div>
   );
 }

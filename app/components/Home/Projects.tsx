@@ -43,21 +43,22 @@ export default function Projects() {
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
         
         {/* Header Section */}
-        <div className="flex flex-col-reverse lg:flex-row justify-between items-start lg:items-end gap-12 mb-20 lg:mb-24">
+        <div className="flex flex-col items-start gap-4 mb-20 lg:mb-24">
           
-          {/* Left: Paragraph */}
-          <div className="max-w-sm relative z-20">
+          {/* Badge */}
+          <span className="inline-block border border-gray-200 rounded-full px-5 py-2 text-[13px] font-semibold text-gray-600 tracking-wide bg-white shadow-sm">
+            Portfolio
+          </span>
+
+          {/* Left: Paragraph immediately beneath Badge */}
+          <div className="max-w-md relative z-20 mt-2">
             <p className="text-gray-400 text-sm md:text-base leading-[1.8] font-medium">
               {dummyText}
             </p>
           </div>
 
-          {/* Right: Badge and Headline */}
-          <div className="max-w-2xl flex flex-col items-start lg:items-end relative z-20 text-left lg:text-right">
-            <span className="inline-block border border-gray-200 rounded-full px-5 py-2 text-[13px] font-semibold text-gray-600 tracking-wide bg-white shadow-sm mb-6 lg:mb-8">
-              Portfolio
-            </span>
-            
+          {/* Headline */}
+          <div className="max-w-2xl text-left mt-2">
             <h2 className="text-[36px] md:text-5xl lg:text-[52px] font-bold leading-[1.12] text-[#111] tracking-tight">
               Explore our most successful projects
             </h2>

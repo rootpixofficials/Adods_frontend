@@ -1,4 +1,3 @@
-// src/components/Navbar.tsx
 "use client";
 
 import { useState, useEffect } from "react";
@@ -28,6 +27,7 @@ export default function Navbar() {
     { name: "What we do", path: "/whatwedo" },
     { name: "How we work", path: "/howwework" },
     { name: "Our works", path: "/ourworks" },
+    { name: "Blog", path: "/blog" },
   ];
 
   // Check if link is active
@@ -37,22 +37,26 @@ export default function Navbar() {
     }
     return pathname.startsWith(path);
   };
+  
+  const isSubpage = pathname !== "/";
+  // If it's a subpage, or we are scrolled on the home page, we want the "dark" nav scheme
+  const isDarkNav = isSubpage || isScrolled;
 
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-500 h-20 ${
-        isScrolled
-          ? "bg-black/30 backdrop-blur-md text-white shadow-sm"
+        isDarkNav
+          ? "bg-black/80 backdrop-blur-md text-white shadow-sm"
           : "bg-transparent "
       }`}
     >
       <div className="container mx-auto px-6 h-full flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="relative z-10">
+        <Link href="/" className="relative z-10 hover:opacity-80 transition-opacity">
           <div className="transition-all duration-500">
             {!imageError ? (
               <Image
-                src={isScrolled ? "/Images/adods_white_logo.png" : "/Images/adods.png"}
+                src={isDarkNav ? "/Images/adods_white_logo.png" : "/Images/adods.png"}
                 alt="Addods Logo"
                 width={120}
                 height={40}
@@ -62,7 +66,7 @@ export default function Navbar() {
               />
             ) : (
               <span className={`text-xl font-bold ${
-                isScrolled ? "text-white" : "text-black"
+                isDarkNav ? "text-white" : "text-black"
               }`}>
                 ADDODS
               </span>
@@ -79,18 +83,20 @@ export default function Navbar() {
               <Link
                 key={link.path}
                 href={link.path}
-                className={`font-medium  tracking-wide transition-all duration-300 relative group h-full flex items-center ${
-                  isScrolled
-                    ? "text-white"
+                className={`font-medium tracking-wide transition-all duration-300 relative group h-full flex items-center ${
+                  isDarkNav
+                    ? isActive 
+                      ? "text-white" 
+                      : "text-gray-400 hover:text-white"
                     : isActive
-                    ? "text-black"
-                    : "text-gray-400 hover:text-black"
+                      ? "text-black"
+                      : "text-gray-500 hover:text-black"
                 }`}
               >
                 {link.name}
                 <span
                   className={`absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full ${
-                    isScrolled ? "bg-white" : "bg-black"
+                    isDarkNav ? "bg-white" : "bg-black"
                   } ${isActive ? "w-full" : ""}`}
                 ></span>
               </Link>
@@ -101,12 +107,10 @@ export default function Navbar() {
         {/* Contact Us Button */}
         <Link
           href="/contact"
-          className={`hidden md:block px-6 py-2 rounded-full  font-medium transition-all duration-300 ${
-            isScrolled
-              ? "bg-white backdrop-blur-sm text-black border border-white/30 hover:bg-white/20"
-              : pathname === "/contact"
-              ? "bg-white text-black border border-black"
-              : "bg-black text-white hover:bg-white hover:text-black border border-transparent hover:border-black"
+          className={`hidden md:flex items-center justify-center px-7 py-2.5 rounded-full font-semibold transition-all duration-300 ${
+            isDarkNav
+              ? "bg-white text-black hover:bg-gray-200 shadow-[0_0_15px_rgba(255,255,255,0.1)] hover:shadow-[0_0_20px_rgba(255,255,255,0.3)]"
+              : "bg-black text-white hover:bg-gray-800"
           }`}
         >
           Contact Us
@@ -114,34 +118,34 @@ export default function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden relative z-10 w-10 h-10 flex items-center justify-center"
+          className="md:hidden relative z-50 w-10 h-10 flex items-center justify-center"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle menu"
         >
           <div
             className={`w-6 h-0.5 transition-all duration-300 absolute ${
-              isScrolled ? "bg-white" : "bg-black"
+              isDarkNav || isMenuOpen ? "bg-white" : "bg-black"
             } ${isMenuOpen ? "rotate-45" : "-translate-y-2"}`}
           ></div>
           <div
             className={`w-6 h-0.5 transition-all duration-300 absolute ${
-              isScrolled ? "bg-white" : "bg-black"
+              isDarkNav || isMenuOpen ? "bg-white" : "bg-black"
             } ${isMenuOpen ? "opacity-0" : "opacity-100"}`}
           ></div>
           <div
             className={`w-6 h-0.5 transition-all duration-300 absolute ${
-              isScrolled ? "bg-white" : "bg-black"
+              isDarkNav || isMenuOpen ? "bg-white" : "bg-black"
             } ${isMenuOpen ? "-rotate-45" : "translate-y-2"}`}
           ></div>
         </button>
 
         {/* Mobile Menu */}
         <div
-          className={`fixed inset-0 bg-black/95 backdrop-blur-lg flex items-center justify-center transition-all duration-500 ${
+          className={`fixed inset-0 bg-black/95 backdrop-blur-xl flex items-center justify-center transition-all duration-500 z-40 ${
             isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
           } md:hidden`}
         >
-          <div className="flex flex-col items-center space-y-8">
+          <div className="flex flex-col items-center justify-center w-full h-full space-y-8 pt-20">
             {navLinks.map((link) => {
               const isActive = isActiveLink(link.path);
               
@@ -149,8 +153,8 @@ export default function Navbar() {
                 <Link
                   key={link.path}
                   href={link.path}
-                  className={`text-2xl font-light transition-colors ${
-                    isActive ? "text-white" : "text-gray-400 hover:text-white"
+                  className={`text-3xl font-light tracking-wide transition-colors ${
+                    isActive ? "text-white font-medium" : "text-gray-400 hover:text-white"
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
@@ -160,11 +164,7 @@ export default function Navbar() {
             })}
             <Link
               href="/contact"
-              className={`border px-8 py-3 rounded-full text-lg font-medium transition-colors mt-4 ${
-                pathname === "/contact"
-                  ? "bg-white text-black border-white"
-                  : "border-white text-white hover:bg-white hover:text-black"
-              }`}
+              className="mt-8 bg-white text-black px-10 py-4 rounded-full text-xl font-bold transition-transform hover:scale-105"
               onClick={() => setIsMenuOpen(false)}
             >
               Contact Us
