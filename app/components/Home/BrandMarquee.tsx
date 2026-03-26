@@ -23,20 +23,20 @@ export default function BrandMarquee() {
           style={{ maskImage: "linear-gradient(to right, transparent, black 15%, black 85%, transparent)", WebkitMaskImage: "linear-gradient(to right, transparent, black 15%, black 85%, transparent)" }}
         >
           
-          {/* Animated Track */}
-          <div className="flex animate-[marquee_180s_linear_infinite] min-w-max items-center hover:[animation-play-state:paused]">
+          {/* Animated Track - Increased Speed */}
+          <div className="flex animate-[marquee_60s_linear_infinite] min-w-max items-center hover:[animation-play-state:paused]">
             
             {/* Group 1 */}
-            <div className="flex items-center gap-12 md:gap-24 pl-6 md:pl-12">
+            <div className="flex items-center gap-4 md:gap-8 pl-4">
               {logos.map((src, idx) => (
                 <React.Fragment key={idx}>
-                  <div className="relative w-[220px] h-[120px] md:w-[320px] md:h-[160px] flex-shrink-0 flex items-center justify-center cursor-pointer transition-all duration-500 hover:scale-[1.15] group">
+                  <div className="relative w-[380px] h-[220px] md:w-[480px] md:h-[280px] flex-shrink-0 flex items-center justify-center cursor-pointer transition-all duration-500 hover:scale-[1.12] group">
                      {/* Hover Glow Behind Logo */}
                      <div className="absolute inset-0 bg-white/5 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                      <img 
                        src={src} 
                        alt={`Brand Logo ${idx + 1}`} 
-                       className="max-w-[85%] max-h-[85%] object-contain opacity-60 group-hover:opacity-100 group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.6)] transition-all duration-500 relative z-10"
+                       className="w-full h-full object-contain opacity-60 group-hover:opacity-100 group-hover:drop-shadow-[0_0_20px_rgba(255,255,255,0.8)] transition-all duration-500 relative z-10 p-2"
                      />
                   </div>
                 </React.Fragment>
@@ -44,16 +44,16 @@ export default function BrandMarquee() {
             </div>
 
             {/* Group 2 (Duplicate for Seamless Loop) */}
-            <div className="flex items-center gap-12 md:gap-24 pl-12 md:pl-24 pr-6 md:pr-12" aria-hidden="true">
+            <div className="flex items-center gap-4 md:gap-8 pl-4 md:pl-8 pr-4" aria-hidden="true">
               {logos.map((src, idx) => (
                 <React.Fragment key={`dup-${idx}`}>
-                  <div className="relative w-[220px] h-[120px] md:w-[320px] md:h-[160px] flex-shrink-0 flex items-center justify-center cursor-pointer transition-all duration-500 hover:scale-[1.15] group">
+                  <div className="relative w-[380px] h-[220px] md:w-[480px] md:h-[280px] flex-shrink-0 flex items-center justify-center cursor-pointer transition-all duration-500 hover:scale-[1.12] group">
                      {/* Hover Glow Behind Logo */}
                      <div className="absolute inset-0 bg-white/5 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                      <img 
                        src={src} 
                        alt={`Brand Logo ${idx + 1}`} 
-                       className="max-w-[85%] max-h-[85%] object-contain opacity-60 group-hover:opacity-100 group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.6)] transition-all duration-500 relative z-10"
+                       className="w-full h-full object-contain opacity-60 group-hover:opacity-100 group-hover:drop-shadow-[0_0_20px_rgba(255,255,255,0.8)] transition-all duration-500 relative z-10 p-2"
                      />
                   </div>
                 </React.Fragment>

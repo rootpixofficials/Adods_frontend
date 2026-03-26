@@ -45,9 +45,11 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-500 h-20 ${
-        isDarkNav
-          ? "bg-black/80 backdrop-blur-md text-white shadow-sm"
-          : "bg-transparent "
+        isMenuOpen
+          ? "bg-black text-white"
+          : isDarkNav
+            ? "bg-black/80 backdrop-blur-md text-white shadow-sm"
+            : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-6 h-full flex items-center justify-between">
@@ -141,7 +143,7 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         <div
-          className={`fixed inset-0 bg-black/95 backdrop-blur-xl flex items-center justify-center transition-all duration-500 z-40 ${
+          className={`fixed inset-0 bg-black flex items-center justify-center transition-all duration-500 z-40 ${
             isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
           } md:hidden`}
         >
