@@ -17,10 +17,9 @@ export default function Orbit() {
         </div>
       </div>
 
-      {/* Central Sun */}
+      {/* Central Sun - Adods Logo */}
       <div className="absolute z-10 w-32 h-32 md:w-36 md:h-36 bg-black rounded-full shadow-xl flex flex-col items-center justify-center border-4 border-white transition-transform duration-300 group-hover:scale-110">
-        <span className="text-4xl font-bold text-white tracking-tight">50+</span>
-        <span className="text-gray-300 text-sm font-medium mt-1">Clients</span>
+        <span className="text-xl md:text-2xl font-black text-white tracking-wider uppercase">ADODS</span>
       </div>
 
       {/* Outer Orbit (Facebook & LinkedIn) */}
