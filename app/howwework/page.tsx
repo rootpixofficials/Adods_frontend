@@ -1,5 +1,6 @@
 import React from 'react';
 import CTA from '../components/Home/CTA';
+import AnimatedSection from '../components/AnimatedSection';
 
 export default function HowWeWork() {
   const steps = [
@@ -30,9 +31,9 @@ export default function HowWeWork() {
   ];
 
   return (
-    <div className="min-h-screen bg-white text-black animate-fade-in-up">
+    <div className="min-h-screen bg-white text-black">
       {/* Hero */}
-      <section className="relative w-full pt-44 pb-20 px-6 bg-black text-white overflow-hidden">
+      <AnimatedSection className="relative w-full pt-44 pb-20 px-6 bg-black text-white overflow-hidden" direction="none">
         <div className="absolute inset-0 z-0 opacity-20" 
              style={{ backgroundImage: 'radial-gradient(circle, #ffffff 1.5px, transparent 1.5px)', backgroundSize: '40px 40px' }}></div>
         <div className="container mx-auto relative z-10 max-w-5xl text-center">
@@ -46,15 +47,15 @@ export default function HowWeWork() {
             A transparent, collaborative, and proven methodology that ensures we deliver exceptional results on time and on budget.
           </p>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Timeline Section */}
-      <section className="py-24 px-6 bg-white">
+      <div className="py-24 px-6 bg-white">
         <div className="container mx-auto max-w-5xl relative">
           
           <div className="space-y-24 relative">
             {steps.map((step, index) => (
-              <div key={index} className="flex flex-col md:flex-row gap-12 group">
+              <AnimatedSection direction="up" delay={0.1} key={index} className="flex flex-col md:flex-row gap-12 group">
                 {/* Visual Step Indicator */}
                 <div className="hidden md:flex flex-col items-center">
                   <div className="w-16 h-16 rounded-full bg-black text-white flex items-center justify-center text-2xl font-bold shadow-xl group-hover:scale-110 transition-transform duration-500">
@@ -90,21 +91,23 @@ export default function HowWeWork() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </AnimatedSection>
             ))}
           </div>
         </div>
-      </section>
+      </div>
       
       {/* FAQ Sneak Peek */}
-      <section className="pb-24 px-6 bg-white">
+      <AnimatedSection className="pb-24 px-6 bg-white" direction="up">
         <div className="container mx-auto max-w-4xl text-center border-t border-gray-100 pt-24">
           <h2 className="text-4xl font-bold mb-6 tracking-tight">Got questions?</h2>
           <p className="text-gray-500 text-lg mb-8">We believe in complete transparency. Ask us anything about our stack, pricing, or timelines.</p>
         </div>
-      </section>
+      </AnimatedSection>
 
-      <CTA />
+      <AnimatedSection direction="up">
+        <CTA />
+      </AnimatedSection>
     </div>
   );
 }

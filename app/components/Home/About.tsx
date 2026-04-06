@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function About() {
   return (
@@ -9,7 +10,13 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
 
           {/* Top Left: Text & Badges */}
-          <div className="lg:col-span-7 flex flex-col justify-center pr-0 lg:pr-8">
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="lg:col-span-7 flex flex-col justify-center pr-0 lg:pr-8"
+          >
             <div className="mb-6">
               <Link href="/whoweare" className="inline-block border border-gray-300 rounded-full px-5 py-2 text-sm font-semibold text-gray-700 tracking-wide bg-white/50 backdrop-blur-sm hover:bg-black hover:text-white transition-all duration-300 animate-breath hover:[animation-play-state:paused]">
                 Who we are
@@ -18,7 +25,7 @@ export default function About() {
 
             <div className="relative mb-6">
               <h2 className="text-4xl md:text-5xl lg:text-[54px] font-bold leading-[1.15] text-[#111] tracking-tight relative z-10 max-w-lg">
-                Meet Adods: Your Design Partners
+                Meet Adods: Your Digital Growth Partner
               </h2>
 
               {/* Star SVG Right of Heading (Continuous spin) */}
@@ -34,12 +41,17 @@ export default function About() {
             </div>
 
             <p className="text-gray-500 text-base md:text-[17px] leading-relaxed max-w-xl font-medium">
-              We're not just designers; we're creators, problem-solvers, and your brand's best friends. At Adods, we live and breathe design, from captivating visuals to seamless digital experiences. Think of us as an extension of your team, ready to bring your ideas to life.
-            </p>
-          </div>
+A leading digital marketing agency in Kerala offering SEO services, social media marketing, Google Ads, and website development. As a trusted digital marketing agency in Malappuram, delivering local SEO services and affordable digital marketing services that drive real business growth.            </p>
+          </motion.div>
 
           {/* Top Right: Image 1 */}
-          <div className="lg:col-span-5 relative w-full h-[300px] lg:h-[350px] mb-4 lg:mb-0">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9, x: 30 }}
+            whileInView={{ opacity: 1, scale: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+            className="lg:col-span-5 relative w-full h-[300px] lg:h-[350px] mb-4 lg:mb-0"
+          >
             <div className="w-full h-full relative rounded-[32px] overflow-hidden grayscale-[40%] hover:grayscale-0 transition-all duration-700 shadow-sm border border-black/5">
               <Image
                 src="/Images/Screenshot 2026-03-19 022454.png"
@@ -48,10 +60,16 @@ export default function About() {
                 className="object-cover"
               />
             </div>
-          </div>
+          </motion.div>
 
           {/* Bottom Continuous Black Card - Spanning 12 cols */}
-          <div className="lg:col-span-12 bg-[#0a0a0a] rounded-[32px] md:rounded-[40px] relative overflow-hidden flex flex-col lg:flex-row min-h-[420px] shadow-2xl mt-4">
+          <motion.div 
+            initial={{ opacity: 0, y: 70 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 1.2, ease: "easeOut", delay: 0.3 }}
+            className="lg:col-span-12 bg-[#0a0a0a] rounded-[32px] md:rounded-[40px] relative overflow-hidden flex flex-col lg:flex-row min-h-[420px] shadow-2xl mt-4"
+          >
 
             {/* Wavy background spanning the whole card (simulated via radial gradients & svg) */}
             <div className="absolute inset-0 z-0 pointer-events-none opacity-30 select-none" style={{ background: "radial-gradient(ellipse at 70% 30%, rgba(255,255,255,0.12) 0%, transparent 50%), radial-gradient(ellipse at 30% 80%, rgba(255,255,255,0.08) 0%, transparent 40%)" }}>
@@ -77,12 +95,12 @@ export default function About() {
 
               {/* Floating Pills Grid */}
               <div className="mt-20 flex flex-wrap gap-x-3 gap-y-4 max-w-[500px]">
-                <span className="bg-white text-black px-6 py-3 rounded-full font-bold text-xs md:text-[13px] -rotate-3 hover:rotate-0 hover:scale-105 transition-all shadow-[0_8px_30px_rgb(255,255,255,0.12)] cursor-default">Marketing</span>
-                <span className="bg-white text-black px-6 py-3 rounded-full font-bold text-xs md:text-[13px] rotate-2 hover:rotate-0 hover:scale-105 transition-all shadow-[0_8px_30px_rgb(255,255,255,0.12)] cursor-default">Web Design</span>
-                <span className="bg-white text-black px-6 py-3 rounded-full font-bold text-xs md:text-[13px] -rotate-1 hover:rotate-0 hover:scale-105 transition-all shadow-[0_8px_30px_rgb(255,255,255,0.12)] cursor-default">Web Design</span>
-                <span className="bg-white text-black px-6 py-3 rounded-full font-bold text-xs md:text-[13px] rotate-3 hover:rotate-0 hover:scale-105 transition-all shadow-[0_8px_30px_rgb(255,255,255,0.12)] cursor-default mt-1">Product Design</span>
-                <span className="bg-white text-black px-6 py-3 rounded-full font-bold text-xs md:text-[13px] -rotate-2 hover:rotate-0 hover:scale-105 transition-all shadow-[0_8px_30px_rgb(255,255,255,0.12)] cursor-default mt-3">SEO</span>
-                <span className="bg-white text-black px-6 py-3 rounded-full font-bold text-xs md:text-[13px] rotate-1 hover:rotate-0 hover:scale-105 transition-all shadow-[0_8px_30px_rgb(255,255,255,0.12)] cursor-default mt-1">Brand Positioning</span>
+                <span className="bg-white text-black px-6 py-3 rounded-full font-bold text-xs md:text-[13px] -rotate-3 hover:rotate-0 hover:scale-105 transition-all shadow-[0_8px_30px_rgb(255,255,255,0.12)] cursor-default">SEO Services</span>
+                <span className="bg-white text-black px-6 py-3 rounded-full font-bold text-xs md:text-[13px] rotate-2 hover:rotate-0 hover:scale-105 transition-all shadow-[0_8px_30px_rgb(255,255,255,0.12)] cursor-default">Social Media</span>
+                <span className="bg-white text-black px-6 py-3 rounded-full font-bold text-xs md:text-[13px] -rotate-1 hover:rotate-0 hover:scale-105 transition-all shadow-[0_8px_30px_rgb(255,255,255,0.12)] cursor-default">Google Ads</span>
+                <span className="bg-white text-black px-6 py-3 rounded-full font-bold text-xs md:text-[13px] rotate-3 hover:rotate-0 hover:scale-105 transition-all shadow-[0_8px_30px_rgb(255,255,255,0.12)] cursor-default mt-1">Web Development</span>
+                <span className="bg-white text-black px-6 py-3 rounded-full font-bold text-xs md:text-[13px] -rotate-2 hover:rotate-0 hover:scale-105 transition-all shadow-[0_8px_30px_rgb(255,255,255,0.12)] cursor-default mt-3">Branding</span>
+                <span className="bg-white text-black px-6 py-3 rounded-full font-bold text-xs md:text-[13px] rotate-1 hover:rotate-0 hover:scale-105 transition-all shadow-[0_8px_30px_rgb(255,255,255,0.12)] cursor-default mt-1">Local SEO</span>
               </div>
             </div>
 
@@ -103,7 +121,7 @@ export default function About() {
               </div>
             </div>
 
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -1,7 +1,16 @@
 import React from "react";
+import { motion, Variants } from "framer-motion";
+
+const cardVariants: Variants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+};
 
 const ServiceCard = ({ title, desc }: { title: string; desc: string }) => (
-  <div className="relative bg-[#0a0a0a] border border-white/10 rounded-[32px] p-8 md:p-10 transition-all duration-500 hover:bg-[#111111] hover:border-white/20 group">
+  <motion.div 
+    variants={cardVariants}
+    className="relative bg-[#0a0a0a] border border-white/10 rounded-[32px] p-8 md:p-10 transition-all duration-500 hover:bg-[#111111] hover:border-white/20 group"
+  >
     
     {/* Subtle Inner Glow on Hover */}
     <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-[0.02] rounded-[32px] pointer-events-none transition-opacity duration-500 delay-100"></div>
@@ -23,21 +32,19 @@ const ServiceCard = ({ title, desc }: { title: string; desc: string }) => (
       {desc}
     </p>
 
-  </div>
+  </motion.div>
 );
 
 export default function WhatWeDo() {
-  const dummyText = "Qorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos";
-  
-  const subtitleText = "Qorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac ali";
+  const subtitleText = "Providing complete digital marketing services in Kerala including SEO, social media marketing, Google Ads, and website development to drive real business growth.";
 
   const services = [
-    { title: "Brand Identity", desc: dummyText },
-    { title: "Illustration", desc: dummyText },
-    { title: "UI/UX Design", desc: dummyText },
-    { title: "Frontend Design", desc: dummyText },
-    { title: "Android/IOS App", desc: dummyText },
-    { title: "Software Development", desc: dummyText },
+    { title: "SEO Services", desc: "Improve rankings, traffic, and visibility with expert SEO services in Kerala." },
+    { title: "Social Media Marketing", desc: "Grow your brand with targeted social media marketing strategies." },
+    { title: "Google Ads", desc: "Generate instant leads with high-performing Google Ads campaigns." },
+    { title: "Branding", desc: "Create a strong brand identity with a professional branding agency in Kerala." },
+    { title: "Local SEO", desc: "Reach nearby customers with local SEO services in Malappuram." },
+    { title: "Website Development", desc: "Build fast, responsive websites designed to convert visitors into customers." },
   ];
 
   return (
@@ -54,8 +61,13 @@ export default function WhatWeDo() {
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
         
         {/* Top Header Section */}
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-10 lg:gap-20 mb-20 lg:mb-24">
-          
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8 }}
+          className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-10 lg:gap-20 mb-20 lg:mb-24"
+        >
           {/* Left Column (Badge + Headline) */}
           <div className="max-w-2xl flex flex-col items-start relative z-20">
             <span className="inline-block border border-white/10 rounded-full px-5 py-2 text-[13px] md:text-sm font-semibold text-gray-300 tracking-wide bg-white/5 backdrop-blur-sm mb-6 lg:mb-8">
@@ -63,7 +75,7 @@ export default function WhatWeDo() {
             </span>
             
             <h2 className="text-[36px] md:text-5xl lg:text-[52px] font-bold leading-[1.12] text-white tracking-tight">
-              We design meaningful not just quick impressions
+              We Deliver Results, Not Just Impressions
             </h2>
           </div>
 
@@ -73,15 +85,22 @@ export default function WhatWeDo() {
               {subtitleText}
             </p>
           </div>
-          
-        </div>
+        </motion.div>
 
         {/* 6 Grid Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 relative z-20">
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          variants={{
+            visible: { transition: { staggerChildren: 0.15 } }
+          }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 relative z-20"
+        >
           {services.map((service, idx) => (
             <ServiceCard key={idx} title={service.title} desc={service.desc} />
           ))}
-        </div>
+        </motion.div>
 
       </div>
     </section>

@@ -1,5 +1,6 @@
 import React from 'react';
 import CTA from '../components/Home/CTA';
+import AnimatedSection from '../components/AnimatedSection';
 
 export default function WhoWeAre() {
   const stats = [
@@ -17,9 +18,9 @@ export default function WhoWeAre() {
   ];
 
   return (
-    <div className="min-h-screen bg-white animate-fade-in-up">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative w-full pt-44 pb-24 px-6 bg-black text-white overflow-hidden">
+      <AnimatedSection className="relative w-full pt-44 pb-24 px-6 bg-black text-white overflow-hidden" direction="none" delay={0.1}>
         <div className="absolute inset-0 z-0 opacity-20" 
              style={{ backgroundImage: 'radial-gradient(circle, #ffffff 1.5px, transparent 1.5px)', backgroundSize: '40px 40px' }}></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/5 rounded-full blur-[100px] pointer-events-none"></div>
@@ -34,10 +35,10 @@ export default function WhoWeAre() {
             As a global creative digital agency, we combine strategy, design, and engineering to help brands thrive in today's fast-paced digital landscape.
           </p>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Story & Stats Section */}
-      <section className="py-24 px-6 bg-white text-black">
+      <AnimatedSection className="py-24 px-6 bg-white text-black" direction="up" delay={0.2}>
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24 items-center">
              <div className="relative w-full aspect-square md:aspect-auto md:h-[600px] rounded-[3rem] overflow-hidden shadow-2xl group">
@@ -66,10 +67,10 @@ export default function WhoWeAre() {
              </div>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Team Section */}
-      <section className="py-24 px-6 bg-gray-50 text-black">
+      <AnimatedSection className="py-24 px-6 bg-gray-50 text-black" direction="up" delay={0.2}>
         <div className="container mx-auto max-w-7xl">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">Meet the Leadership</h2>
@@ -92,9 +93,11 @@ export default function WhoWeAre() {
             ))}
           </div>
         </div>
-      </section>
+      </AnimatedSection>
       
-      <CTA />
+      <AnimatedSection direction="up" delay={0.2}>
+        <CTA />
+      </AnimatedSection>
     </div>
   );
 }

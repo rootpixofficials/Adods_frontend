@@ -2,6 +2,7 @@
 
 import React from 'react';
 import CTA from '../components/Home/CTA';
+import AnimatedSection from '../components/AnimatedSection';
 
 export default function Blog() {
   const featuredPost = {
@@ -23,9 +24,9 @@ export default function Blog() {
   ];
 
   return (
-    <div className="min-h-screen bg-white text-black animate-fade-in-up">
+    <div className="min-h-screen bg-white text-black">
       {/* Hero */}
-      <section className="relative w-full pt-44 pb-20 px-6 bg-black text-white overflow-hidden">
+      <AnimatedSection className="relative w-full pt-44 pb-20 px-6 bg-black text-white overflow-hidden" direction="none">
         <div className="absolute inset-0 z-0 opacity-20" 
              style={{ backgroundImage: 'radial-gradient(circle, #ffffff 1.5px, transparent 1.5px)', backgroundSize: '40px 40px' }}></div>
         <div className="container mx-auto relative z-10 max-w-5xl text-center">
@@ -39,10 +40,10 @@ export default function Blog() {
             Dive into our actionable articles exploring technology, strategy, design, and culture. Written by the strategic minds powering the best digital marketing agency in KERALA. We help businesses scale through Search Engine Optimization (SEO), advanced UI/UX design, and data-driven marketing campaigns.
           </p>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* SEO Content Section */}
-      <section className="py-16 px-6 bg-gray-50 border-y border-gray-200">
+      <AnimatedSection className="py-16 px-6 bg-gray-50 border-y border-gray-200" direction="up" delay={0.2}>
         <div className="container mx-auto max-w-5xl text-center md:text-left">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-black tracking-tight">Our Marketing & SEO Philosophy</h2>
           <p className="text-lg text-gray-600 mb-6 leading-relaxed">
@@ -63,14 +64,13 @@ export default function Blog() {
             </div>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Featured Post */}
-      <section className="py-20 px-6 bg-white overflow-hidden">
+      <AnimatedSection className="py-20 px-6 bg-white overflow-hidden" direction="up">
         <div className="container mx-auto max-w-7xl">
           <h2 className="text-3xl md:text-4xl font-bold mb-10 tracking-tight pl-2 text-black border-l-4 border-black pl-5">Spotlight Story</h2>
           <div className="group cursor-pointer rounded-[3rem] overflow-hidden relative shadow-lg hover:shadow-2xl transition-all duration-500 w-full h-[500px] lg:h-[600px] border border-gray-100 flex items-center justify-center bg-gray-900">
-            {/* Swapped Unsplash image URL to a reliable working ID */}
             <img src={featuredPost.image} alt="Featured Post" className="w-full h-full object-cover filter brightness-[0.6] group-hover:scale-105 transition-transform duration-1000 absolute inset-0" />
             
             <div className="absolute inset-0 flex flex-col justify-end p-10 md:p-16 text-white bg-gradient-to-t from-black via-black/60 to-transparent z-10">
@@ -84,15 +84,15 @@ export default function Blog() {
             </div>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Grid */}
-      <section className="py-12 px-6 bg-white">
+      <div className="py-12 px-6 bg-white">
         <div className="container mx-auto max-w-7xl">
           <h2 className="text-3xl md:text-4xl font-bold mb-10 tracking-tight text-black border-l-4 border-black pl-5">Recent Insights</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            {posts.map((post) => (
-              <div key={post.id} className="bg-gray-50 rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-gray-100 group flex flex-col cursor-pointer">
+            {posts.map((post, idx) => (
+              <AnimatedSection key={post.id} direction="up" delay={idx * 0.1} className="bg-gray-50 rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-gray-100 group flex flex-col cursor-pointer">
                 <div className="relative w-full h-[260px] overflow-hidden">
                   <div className="absolute inset-0 bg-black/10 z-10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                   <img src={post.image} alt={post.title} className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" />
@@ -110,20 +110,20 @@ export default function Blog() {
                     </svg>
                   </div>
                 </div>
-              </div>
+              </AnimatedSection>
             ))}
           </div>
           
-          <div className="mt-20 text-center">
+          <AnimatedSection direction="up" delay={0.2} className="mt-20 text-center">
              <button className="bg-transparent border-2 border-black text-black px-12 py-4 rounded-full font-bold text-lg hover:bg-black hover:text-white transition-colors duration-300">
                Load More Articles
              </button>
-          </div>
+          </AnimatedSection>
         </div>
-      </section>
+      </div>
       
       {/* Newsletter */}
-      <section className="py-24 px-6 bg-white">
+      <AnimatedSection className="py-24 px-6 bg-white" direction="up">
         <div className="container mx-auto max-w-5xl bg-gray-50 rounded-[3rem] p-12 md:p-20 text-center border border-gray-200 shadow-sm relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-gray-200 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 opacity-50 pointer-events-none"></div>
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-gray-300 rounded-full blur-[80px] translate-y-1/2 -translate-x-1/2 opacity-30 pointer-events-none"></div>
@@ -138,9 +138,11 @@ export default function Blog() {
             </button>
           </form>
         </div>
-      </section>
+      </AnimatedSection>
 
-      <CTA />
+      <AnimatedSection direction="up" delay={0.2}>
+        <CTA />
+      </AnimatedSection>
     </div>
   );
 }

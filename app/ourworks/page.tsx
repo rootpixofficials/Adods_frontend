@@ -1,5 +1,6 @@
 import React from 'react';
 import CTA from '../components/Home/CTA';
+import AnimatedSection from '../components/AnimatedSection';
 
 export default function OurWorks() {
   const projects = [
@@ -14,7 +15,7 @@ export default function OurWorks() {
   return (
     <div className="min-h-screen bg-white text-black">
       {/* Hero */}
-      <section className="relative w-full pt-44 pb-20 px-6 bg-black text-white overflow-hidden">
+      <AnimatedSection className="relative w-full pt-44 pb-20 px-6 bg-black text-white overflow-hidden" direction="none">
         <div className="absolute inset-0 z-0 opacity-20" 
              style={{ backgroundImage: 'radial-gradient(circle, #ffffff 1.5px, transparent 1.5px)', backgroundSize: '40px 40px' }}></div>
         <div className="container mx-auto relative z-10 max-w-6xl text-center">
@@ -37,14 +38,14 @@ export default function OurWorks() {
             ))}
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Gallery */}
-      <section className="py-24 px-6 bg-gray-50">
+      <div className="py-24 px-6 bg-gray-50">
         <div className="container mx-auto max-w-[1400px]">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {projects.map((project, idx) => (
-              <div key={idx} className="group cursor-pointer rounded-[2.5rem] bg-white p-4 shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100 flex flex-col">
+              <AnimatedSection key={idx} direction="up" delay={idx * 0.1} className="group cursor-pointer rounded-[2.5rem] bg-white p-4 shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100 flex flex-col">
                 <div className="relative w-full h-[320px] overflow-hidden rounded-[2rem] mb-6 mb-6 bg-gray-100">
                   <div className="absolute inset-0 bg-black/20 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   {/* View Project Pill hover effect */}
@@ -65,19 +66,21 @@ export default function OurWorks() {
                   <h3 className="text-3xl font-bold mb-2 tracking-tight">{project.title}</h3>
                   <span className="text-gray-500 text-lg font-medium">{project.category}</span>
                 </div>
-              </div>
+              </AnimatedSection>
             ))}
           </div>
           
-          <div className="mt-20 text-center">
+          <AnimatedSection direction="up" className="mt-20 text-center">
             <button className="bg-white border-2 border-black text-black px-10 py-4 rounded-full font-bold text-lg hover:bg-black hover:text-white transition-colors duration-300">
               Load More Projects
             </button>
-          </div>
+          </AnimatedSection>
         </div>
-      </section>
+      </div>
       
-      <CTA />
+      <AnimatedSection direction="up">
+        <CTA />
+      </AnimatedSection>
     </div>
   );
 }

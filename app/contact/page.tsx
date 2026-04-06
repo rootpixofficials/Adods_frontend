@@ -2,12 +2,13 @@
 
 import React from 'react';
 import CTA from '../components/Home/CTA';
+import AnimatedSection from '../components/AnimatedSection';
 
 export default function Contact() {
   return (
     <div className="min-h-screen bg-white text-black">
       {/* Hero */}
-      <section className="relative w-full pt-44 pb-20 px-6 bg-black text-white overflow-hidden">
+      <AnimatedSection className="relative w-full pt-44 pb-20 px-6 bg-black text-white overflow-hidden" direction="none">
         <div className="absolute inset-0 z-0 opacity-20" 
              style={{ backgroundImage: 'radial-gradient(circle, #ffffff 1.5px, transparent 1.5px)', backgroundSize: '40px 40px' }}></div>
         <div className="container mx-auto relative z-10 max-w-5xl text-center">
@@ -21,16 +22,16 @@ export default function Contact() {
             Whether you have a fully fleshed out RFQ or just a napkin sketch, we'd love to hear about it. Our team is ready to help you succeed.
           </p>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Main Content */}
-      <section className="py-24 px-6 bg-white">
+      <div className="py-24 px-6 bg-white">
         <div className="container mx-auto max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
             
             {/* Contact Info container */}
             <div className="flex flex-col h-full justify-between">
-              <div>
+              <AnimatedSection direction="up" delay={0.1}>
                 <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">Drop by our office or say hi via email.</h2>
                 <p className="text-gray-500 text-lg leading-relaxed max-w-md mb-12">
                   We usually respond within 24 hours. If it's urgent, feel free to give us a call during standard business hours.
@@ -56,11 +57,11 @@ export default function Contact() {
                     </p>
                   </div>
                 </div>
-              </div>
+              </AnimatedSection>
             </div>
 
             {/* Form */}
-            <div className="bg-gray-50 p-10 md:p-14 rounded-[3rem] border border-gray-100 shadow-xl shadow-gray-200/50">
+            <AnimatedSection direction="left" delay={0.2} className="bg-gray-50 p-10 md:p-14 rounded-[3rem] border border-gray-100 shadow-xl shadow-gray-200/50">
               <h3 className="text-3xl font-bold mb-8">Send us a message</h3>
               <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -99,12 +100,15 @@ export default function Contact() {
                   Send Message
                 </button>
               </form>
-            </div>
+            </AnimatedSection>
 
           </div>
         </div>
-      </section>
+      </div>
       
+      <AnimatedSection direction="up">
+        <CTA />
+      </AnimatedSection>
     </div>
   );
 }

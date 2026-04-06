@@ -27,13 +27,13 @@ export default function Banner() {
             </div>
 
             {/* Main heading */}
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight relative mb-8 text-gray-900">
-              <span className="block">WE CRAFT BRANDS</span>
-              <span className="block mt-2">& DIGITAL</span>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight relative mb-8 text-gray-900">
+              <span className="block">Your Digital Growth</span>
+              <span className="block mt-2">Partner </span>
               <span className="block mt-2 relative inline-block">
-                EXPERIENCES
+                in Kerala ..!
                 {/* Abstract Star SVG next to experiences */}
-                <svg className="absolute -right-24 top-0 w-20 h-20 text-black animate-[spin_10s_linear_infinite]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
+                <svg className="hidden sm:block absolute -right-24 top-0 w-20 h-20 text-black animate-[spin_10s_linear_infinite]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 2C12 7.525 16.475 12 22 12C16.475 12 12 16.475 12 22C12 16.475 7.525 12 2 12C7.525 12 12 7.525 12 2Z" />
                 </svg>
               </span>
@@ -41,8 +41,7 @@ export default function Banner() {
 
             {/* Description */}
             <p className="text-gray-600 text-base md:text-[17px] max-w-lg leading-relaxed font-medium mb-12 relative z-10">
-              Elevate Your Brand with Exceptional Design Solutions. From branding to UI, we bring your vision to life with tailored online design services.
-            </p>
+Driving business growth across Kerala with result-focused digital marketing. A trusted agency in Malappuram offering SEO, social media marketing, Google Ads, and local SEO to reach the right audience. From high-performing websites to creative branding, we deliver affordable, performance-driven solutions that ensure measurable success.        </p>
 
             {/* Button */}
             <div className="flex items-center">
@@ -50,7 +49,7 @@ export default function Banner() {
                 href="/contact"
                 className="group inline-flex items-center bg-black text-white pl-8 pr-2 py-2 rounded-full text-base font-semibold hover:bg-gray-800 shadow-xl hover:shadow-2xl transition-all duration-300 animate-breath hover:[animation-play-state:paused]"
               >
-                <span className="mr-6">Let's talk</span>
+                <span className="mr-6">Get Free Consultation </span>
                 <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center group-hover:scale-95 transition-transform shadow-sm">
                   <svg className="w-5 h-5 text-black group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />

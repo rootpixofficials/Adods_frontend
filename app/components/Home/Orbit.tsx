@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 export default function Orbit() {
   return (
@@ -19,7 +20,14 @@ export default function Orbit() {
 
       {/* Central Sun - Adods Logo */}
       <div className="absolute z-10 w-32 h-32 md:w-36 md:h-36 bg-black rounded-full shadow-xl flex flex-col items-center justify-center border-4 border-white transition-transform duration-300 group-hover:scale-110">
-        <span className="text-xl md:text-2xl font-black text-white tracking-wider uppercase">ADODS</span>
+        <Image
+          src="/Images/adods_white_logo.png"
+          alt="ADODS Logo"
+          width={128}
+          height={64}
+          className="object-contain w-24 md:w-28 block mx-auto mt-2"
+          priority
+        />
       </div>
 
       {/* Outer Orbit (Facebook & LinkedIn) */}

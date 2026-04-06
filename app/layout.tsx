@@ -9,8 +9,11 @@ import Footer from "./components/Footer";
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 
 export const metadata: Metadata = {
-  title: "Addods - Creative Digital Agency",
+  title: "Adods - Your Digital Growth Partner in Kerala",
   description: "Welcome to Addods - Your creative digital partner",
+  icons: {
+    icon: "/Images/adods logo finel_.png", // Attempting the primary adods logo name
+  },
 };
 
 export default function RootLayout({

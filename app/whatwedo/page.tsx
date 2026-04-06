@@ -1,5 +1,6 @@
 import React from 'react';
 import CTA from '../components/Home/CTA';
+import AnimatedSection from '../components/AnimatedSection';
 
 export default function WhatWeDo() {
   const services = [
@@ -26,9 +27,9 @@ export default function WhatWeDo() {
   ];
 
   return (
-    <div className="min-h-screen bg-white animate-fade-in-up">
+    <div className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="relative w-full pt-44 pb-20 px-6 bg-black text-white overflow-hidden">
+      <AnimatedSection className="relative w-full pt-44 pb-20 px-6 bg-black text-white overflow-hidden" direction="none" delay={0.1}>
         <div className="absolute inset-0 z-0 opacity-20" 
              style={{ backgroundImage: 'radial-gradient(circle, #ffffff 1.5px, transparent 1.5px)', backgroundSize: '40px 40px' }}></div>
         <div className="container mx-auto relative z-10 max-w-5xl text-center">
@@ -42,13 +43,13 @@ export default function WhatWeDo() {
             We don't just execute tasks; we solve problems. Discover how our multi-disciplinary approach can elevate your business to new heights.
           </p>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Services Detail List */}
-      <section className="py-24 px-6 bg-gray-50 text-black">
+      <div className="py-24 px-6 bg-gray-50 text-black">
         <div className="container mx-auto max-w-6xl space-y-24">
            {services.map((service, idx) => (
-             <div key={idx} className={`flex flex-col lg:flex-row gap-12 lg:gap-20 items-center ${idx % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>
+             <AnimatedSection key={idx} direction="up" delay={0.2} className={`flex flex-col lg:flex-row gap-12 lg:gap-20 items-center ${idx % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>
                 
                 {/* Visual Placeholder */}
                 <div className="w-full lg:w-5/12 aspect-[4/3] relative rounded-[3rem] overflow-hidden bg-white shadow-lg border border-gray-100 group">
@@ -84,20 +85,22 @@ export default function WhatWeDo() {
                   </div>
                 </div>
                 
-             </div>
+             </AnimatedSection>
            ))}
         </div>
-      </section>
+      </div>
 
       {/* Embedded Banner */}
-      <section className="py-24 px-6 bg-white">
+      <AnimatedSection className="py-24 px-6 bg-white" direction="up" delay={0.2}>
         <div className="container mx-auto max-w-5xl text-center items-center justify-center flex flex-col">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Not sure what you need?</h2>
           <p className="text-gray-500 mb-8 max-w-xl text-lg">Every business is unique. We provide free consultations to audit your current digital state and recommend a custom roadmap tailored just for you.</p>
         </div>
-      </section>
+      </AnimatedSection>
       
-      <CTA />
+      <AnimatedSection direction="up">
+        <CTA />
+      </AnimatedSection>
     </div>
   );
 }
