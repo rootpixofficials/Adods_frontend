@@ -62,9 +62,9 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
             <ul className="space-y-2 text-gray-400">
-              <li>Email: info@addods.com</li>
-              <li>Phone: +1 (555) 123-4567</li>
-              <li>Address: 123 Creative St, Digital City, DC 12345</li>
+              <li>Email: adodsofficial@gmail.com</li>
+              <li>Phone: +91 92073 36182</li>
+              <li>Address: 2233+R92, Kottakkal, Kerala</li>
             </ul>
           </div>
         </div>

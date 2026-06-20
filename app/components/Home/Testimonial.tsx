@@ -5,21 +5,21 @@ import React, { useState } from 'react';
 const testimonials = [
   {
     id: 1,
-    text: "Yorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
+    text: "Working with Adods has completely transformed our online presence. Their design team brought our vision to life with stunning visuals, and their development team ensured everything ran flawlessly.",
     name: "John D.",
     role: "Project Manager",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
   },
   {
     id: 2,
-    text: "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae. Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Pellentesque in ipsum id orci porta dapibus.",
+    text: "The level of professionalism and creativity they delivered was beyond our expectations. They understood our brand identity perfectly and created an intuitive user experience that our customers love.",
     name: "Sarah W.",
     role: "Product Designer",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
   },
   {
     id: 3,
-    text: "Nulla quis lorem ut libero malesuada feugiat. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Quisque velit nisi.",
+    text: "From start to finish, the communication was excellent. They met all our deadlines and provided valuable insights that helped us scale our marketing efforts significantly. Highly recommended!",
     name: "Michael R.",
     role: "Marketing Director",
     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
@@ -129,7 +129,7 @@ const Testimonial = () => {
           {/* Right Column (Image & small text) — hidden on mobile, shown md+ */}
           <div className="hidden md:flex w-full md:w-5/12 flex-col items-center md:items-end space-y-16 mt-4 md:mt-20">
             <p className="text-gray-400 text-[13px] leading-loose max-w-[240px] px-4 md:px-0 md:text-right self-start md:self-end">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.
+              Our clients trust us to deliver exceptional digital experiences that drive real business results and foster lasting relationships.
             </p>
             
             {/* Oval masked image */}

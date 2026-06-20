@@ -26,7 +26,7 @@ const ProjectCard = ({ title, category, children }: { title: string; category: s
 );
 
 export default function Projects() {
-  const dummyText = "Qorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac ali";
+  const dummyText = "Take a look at some of the digital experiences we've crafted to help businesses grow and engage their audiences effectively.";
 
   return (
     <section className="bg-[#fcfcfc] py-24 md:py-32 overflow-hidden relative">
@@ -73,59 +73,20 @@ export default function Projects() {
       >
         <div className="flex gap-6 overflow-x-auto no-scrollbar snap-x snap-mandatory pr-6 pb-8 pt-4">
           
-          <ProjectCard title="Map product" category="UX Case Study">
-            {/* Map Placeholder */}
-            <div className="relative w-[80%] h-[80%] bg-white rounded-xl shadow-sm border border-gray-100 p-2 overflow-hidden flex flex-col">
-              <div className="flex-1 bg-green-50 rounded-lg relative">
-                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center shadow-lg border-2 border-white">
-                   <div className="w-3 h-3 bg-white rounded-full"></div>
-                 </div>
-                 {/* Map lines */}
-                 <div className="absolute top-0 left-1/4 w-0.5 h-full bg-white opacity-60"></div>
-                 <div className="absolute top-1/3 left-0 w-full h-0.5 bg-white opacity-60"></div>
-              </div>
-            </div>
+          <ProjectCard title="Cerebro Identity" category="Branding">
+            <img src="/images/Branding/cerebro D6 (1).webp" alt="Cerebro Identity" className="w-full h-full object-cover rounded-[24px] hover:scale-105 transition-transform duration-500" />
           </ProjectCard>
 
-          <ProjectCard title="AI Music product" category="UX Case Study">
-            {/* Grid Faces Placeholder */}
-            <div className="relative w-[80%] h-[80%] bg-white rounded-xl shadow-sm border border-gray-100 p-4 flex flex-col gap-3">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-blue-100 rounded-lg"></div>
-                <div className="flex-1 h-3 bg-gray-100 rounded w-full"></div>
-              </div>
-              <div className="grid grid-cols-4 gap-2 flex-1 mt-2">
-                {[...Array(8)].map((_, i) => (
-                  <div key={i} className={`bg-gray-200 rounded-md w-full h-full ${i % 3 === 0 ? 'bg-purple-200' : ''} ${i % 4 === 0 ? 'bg-indigo-300' : ''}`}></div>
-                ))}
-              </div>
-            </div>
+          <ProjectCard title="Kunafa Promo" category="Marketing">
+            <img src="/images/Marketing/kunafa eid 2.webp" alt="Kunafa Promo" className="w-full h-full object-cover rounded-[24px] hover:scale-105 transition-transform duration-500" />
           </ProjectCard>
 
-          <ProjectCard title="AI Music product" category="UX Case Study">
-            <div className="relative w-[80%] h-[80%] bg-white rounded-xl shadow-sm border border-gray-100 p-4 flex flex-col gap-3">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-indigo-100 rounded-lg"></div>
-                <div className="flex-1 h-3 bg-gray-100 rounded w-full"></div>
-              </div>
-              <div className="grid grid-cols-4 gap-2 flex-1 mt-2">
-                {[...Array(8)].map((_, i) => (
-                  <div key={i} className={`bg-gray-200 rounded-md w-full h-full ${i % 2 === 0 ? 'bg-pink-200' : ''} ${i % 5 === 0 ? 'bg-orange-300' : ''}`}></div>
-                ))}
-              </div>
-            </div>
+          <ProjectCard title="Routex" category="Web Design">
+            <img src="/images/Web desing/Routex.png" alt="Routex Showcasing Website" className="w-full h-full object-cover rounded-[24px] hover:scale-105 transition-transform duration-500" />
           </ProjectCard>
 
-          {/* Dummy extra card to allow scrolling properly */}
-          <ProjectCard title="Fintech Dashboard" category="UI Design">
-            <div className="relative w-[80%] h-[80%] bg-white rounded-xl shadow-sm border border-gray-100 p-4 flex flex-col gap-3">
-               <div className="w-1/2 h-4 bg-gray-100 rounded"></div>
-               <div className="flex gap-2 h-1/2">
-                 <div className="flex-1 bg-green-100 rounded-lg"></div>
-                 <div className="w-1/3 bg-blue-100 rounded-lg"></div>
-               </div>
-               <div className="flex-1 bg-gray-50 rounded-lg"></div>
-            </div>
+          <ProjectCard title="Origon E-Commerce" category="Web Development">
+            <img src="/images/Web development/origon.png" alt="Origon E-Commerce" className="w-full h-full object-cover rounded-[24px] hover:scale-105 transition-transform duration-500" />
           </ProjectCard>
 
         </div>

@@ -1,16 +1,39 @@
-import React from 'react';
+"use client";
+
+import React, { useState } from 'react';
 import CTA from '../components/Home/CTA';
 import AnimatedSection from '../components/AnimatedSection';
 
 export default function OurWorks() {
-  const projects = [
-    { title: "Zeno Financial", category: "Fintech Dashboard", tags: ["UI/UX", "Next.js"], image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" },
-    { title: "Lumina Beauty", category: "E-Commerce", tags: ["Shopify", "Branding"], image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" },
-    { title: "Aura Architecture", category: "Corporate Website", tags: ["Web Design", "GSAP"], image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" },
-    { title: "Flow App", category: "Productivity Tool", tags: ["Mobile App", "React Native"], image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" },
-    { title: "Peak Analytics", category: "SaaS Platform", tags: ["Web App", "Dashboard"], image: "https://images.unsplash.com/photo-1555421689-491a97ff2040?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" },
-    { title: "Nova Tech", category: "Rebranding", tags: ["Strategy", "Identity"], image: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" }
+  const [filter, setFilter] = useState("All");
+
+  const allProjects = [
+    { title: "Cerebro", category: "Branding", tags: ["Identity"], image: "/images/Branding/cerebro D6 (1).webp" },
+    { title: "Modway", category: "Branding", tags: ["Rebranding"], image: "/images/Branding/modway branding 1.webp" },
+    { title: "Neha", category: "Branding", tags: ["Design"], image: "/images/Branding/neha.d3 (1).webp" },
+    { title: "Tea Story", category: "Branding", tags: ["Logo"], image: "/images/Branding/tea story branding 2 (1).webp" },
+    { title: "Sky Route", category: "Branding", tags: ["Brand Guide"], image: "/images/Branding/sky route d6.webp" },
+    
+    { title: "Ain Mandhi", category: "Marketing", tags: ["Campaign"], image: "/images/Marketing/ain mandhi.webp" },
+    { title: "AS Interior", category: "Marketing", tags: ["Social Media"], image: "/images/Marketing/as interior.webp" },
+    { title: "Batter Bowl", category: "Marketing", tags: ["Ads"], image: "/images/Marketing/batter bowl 2.webp" },
+    { title: "Kunafa", category: "Marketing", tags: ["Promo"], image: "/images/Marketing/kunafa eid 2.webp" },
+    { title: "Urban Cave", category: "Marketing", tags: ["Strategy"], image: "/images/Marketing/urben cawe.webp" },
+    
+    { title: "Origon", category: "Web Design", tags: ["E-Commerce"], image: "/images/Web desing/origon.png" },
+    { title: "Routex", category: "Web Design", tags: ["Showcasing"], image: "/images/Web desing/Routex.png" },
+    { title: "Rootpix", category: "Web Design", tags: ["Showcasing"], image: "/images/Web desing/rootpix.png" },
+  
+    { title: "Origon", category: "Web Development", tags: ["E-Commerce"], image: "/images/Web development/origon.png" },
+    { title: "Routex", category: "Web Development", tags: ["Showcasing"], image: "/images/Web development/Routex.png" },
+    { title: "Rootpix", category: "Web Development", tags: ["Showcasing"], image: "/images/Web development/rootpix.png" },
   ];
+
+  const filters = ["All", "Branding", "Marketing", "Web Design", "Web Development"];
+
+  const filteredProjects = filter === "All" 
+    ? allProjects 
+    : allProjects.filter(p => p.category === filter);
 
   return (
     <div className="min-h-screen bg-white text-black">
@@ -29,10 +52,14 @@ export default function OurWorks() {
             A curated selection of our finest work. See how we've helped visionary brands innovate, scale, and dominate their industries.
           </p>
           
-          {/* Mock filters */}
+          {/* Filters */}
           <div className="flex flex-wrap justify-center gap-4">
-            {["All", "Web Design", "App Development", "Branding", "Marketing"].map((f, i) => (
-              <button key={i} className={`px-6 py-2 rounded-full border text-sm font-semibold transition-all ${i === 0 ? "bg-white text-black border-white" : "border-white/20 text-gray-300 hover:border-white hover:text-white"}`}>
+            {filters.map((f, i) => (
+              <button 
+                key={i} 
+                onClick={() => setFilter(f)}
+                className={`px-6 py-2 rounded-full border text-sm font-semibold transition-all ${filter === f ? "bg-white text-black border-white" : "border-white/20 text-gray-300 hover:border-white hover:text-white"}`}
+              >
                 {f}
               </button>
             ))}
@@ -44,9 +71,9 @@ export default function OurWorks() {
       <div className="py-24 px-6 bg-gray-50">
         <div className="container mx-auto max-w-[1400px]">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            {projects.map((project, idx) => (
+            {filteredProjects.map((project, idx) => (
               <AnimatedSection key={idx} direction="up" delay={idx * 0.1} className="group cursor-pointer rounded-[2.5rem] bg-white p-4 shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100 flex flex-col">
-                <div className="relative w-full h-[320px] overflow-hidden rounded-[2rem] mb-6 mb-6 bg-gray-100">
+                <div className="relative w-full h-[320px] overflow-hidden rounded-[2rem] mb-6 bg-gray-100">
                   <div className="absolute inset-0 bg-black/20 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   {/* View Project Pill hover effect */}
                   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-4 group-hover:-translate-y-1/2">
