@@ -6,7 +6,7 @@ import AnimatedSection from '../components/AnimatedSection';
 
 export default function OurWorks() {
   const [filter, setFilter] = useState("All");
-
+  const [visibleCount, setVisibleCount] = useState(6);
   const allProjects = [
     { title: "Cerebro", category: "Branding", tags: ["Identity"], image: "/images/Branding/cerebro D6 (1).webp" },
     { title: "Modway", category: "Branding", tags: ["Rebranding"], image: "/images/Branding/modway branding 1.webp" },
@@ -35,6 +35,8 @@ export default function OurWorks() {
     ? allProjects 
     : allProjects.filter(p => p.category === filter);
 
+  const displayedProjects = filteredProjects.slice(0, visibleCount);
+
   return (
     <div className="min-h-screen bg-white text-black">
       {/* Hero */}
@@ -57,7 +59,7 @@ export default function OurWorks() {
             {filters.map((f, i) => (
               <button 
                 key={i} 
-                onClick={() => setFilter(f)}
+                onClick={() => { setFilter(f); setVisibleCount(6); }}
                 className={`px-6 py-2 rounded-full border text-sm font-semibold transition-all ${filter === f ? "bg-white text-black border-white" : "border-white/20 text-gray-300 hover:border-white hover:text-white"}`}
               >
                 {f}
@@ -71,7 +73,7 @@ export default function OurWorks() {
       <div className="py-24 px-6 bg-gray-50">
         <div className="container mx-auto max-w-[1400px]">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            {filteredProjects.map((project, idx) => (
+            {displayedProjects.map((project, idx) => (
               <AnimatedSection key={idx} direction="up" delay={idx * 0.1} className="group cursor-pointer rounded-[2.5rem] bg-white p-4 shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100 flex flex-col">
                 <div className="relative w-full h-[320px] overflow-hidden rounded-[2rem] mb-6 bg-gray-100">
                   <div className="absolute inset-0 bg-black/20 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -97,11 +99,16 @@ export default function OurWorks() {
             ))}
           </div>
           
-          <AnimatedSection direction="up" className="mt-20 text-center">
-            <button className="bg-white border-2 border-black text-black px-10 py-4 rounded-full font-bold text-lg hover:bg-black hover:text-white transition-colors duration-300">
-              Load More Projects
-            </button>
-          </AnimatedSection>
+          {visibleCount < filteredProjects.length && (
+            <AnimatedSection direction="up" className="mt-20 text-center">
+              <button 
+                onClick={() => setVisibleCount(prev => prev + 6)}
+                className="bg-white border-2 border-black text-black px-10 py-4 rounded-full font-bold text-lg hover:bg-black hover:text-white transition-colors duration-300"
+              >
+                Load More Projects
+              </button>
+            </AnimatedSection>
+          )}
         </div>
       </div>
       

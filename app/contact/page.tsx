@@ -63,26 +63,31 @@ export default function Contact() {
             {/* Form */}
             <AnimatedSection direction="left" delay={0.2} className="bg-gray-50 p-10 md:p-14 rounded-[3rem] border border-gray-100 shadow-xl shadow-gray-200/50">
               <h3 className="text-3xl font-bold mb-8">Send us a message</h3>
-              <form className="space-y-8" action="mailto:adodsofficial@gmail.com" method="post" encType="text/plain">
+              <form className="space-y-8" action="https://formsubmit.co/adodsofficial@gmail.com" method="POST">
+                {/* Honey pot to prevent spam */}
+                <input type="text" name="_honey" style={{ display: 'none' }} />
+                {/* Disable captcha for smoother UX */}
+                <input type="hidden" name="_captcha" value="false" />
+                
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="flex flex-col">
                     <label className="text-sm font-bold mb-3 ml-2 text-gray-700">First Name</label>
-                    <input type="text" className="px-6 py-4 bg-white rounded-full border border-gray-200 outline-none focus:border-black focus:ring-1 focus:ring-black transition-all" placeholder="John" />
+                    <input type="text" name="First Name" required className="px-6 py-4 bg-white rounded-full border border-gray-200 outline-none focus:border-black focus:ring-1 focus:ring-black transition-all" placeholder="John" />
                   </div>
                   <div className="flex flex-col">
                     <label className="text-sm font-bold mb-3 ml-2 text-gray-700">Last Name</label>
-                    <input type="text" className="px-6 py-4 bg-white rounded-full border border-gray-200 outline-none focus:border-black focus:ring-1 focus:ring-black transition-all" placeholder="Doe" />
+                    <input type="text" name="Last Name" required className="px-6 py-4 bg-white rounded-full border border-gray-200 outline-none focus:border-black focus:ring-1 focus:ring-black transition-all" placeholder="Doe" />
                   </div>
                 </div>
                 
                 <div className="flex flex-col">
                   <label className="text-sm font-bold mb-3 ml-2 text-gray-700">Email Address</label>
-                  <input type="email" className="px-6 py-4 bg-white rounded-full border border-gray-200 outline-none focus:border-black focus:ring-1 focus:ring-black transition-all" placeholder="john@example.com" />
+                  <input type="email" name="Email" required className="px-6 py-4 bg-white rounded-full border border-gray-200 outline-none focus:border-black focus:ring-1 focus:ring-black transition-all" placeholder="john@example.com" />
                 </div>
                 
                 <div className="flex flex-col">
                   <label className="text-sm font-bold mb-3 ml-2 text-gray-700">Project Type</label>
-                  <select className="px-6 py-4 bg-white rounded-full border border-gray-200 outline-none focus:border-black focus:ring-1 focus:ring-black transition-all appearance-none cursor-pointer">
+                  <select name="Project Type" className="px-6 py-4 bg-white rounded-full border border-gray-200 outline-none focus:border-black focus:ring-1 focus:ring-black transition-all appearance-none cursor-pointer">
                     <option>Web Development</option>
                     <option>UI/UX Design</option>
                     <option>Digital Marketing</option>
@@ -93,7 +98,7 @@ export default function Contact() {
 
                 <div className="flex flex-col">
                   <label className="text-sm font-bold mb-3 ml-2 text-gray-700">Message</label>
-                  <textarea rows={5} className="px-6 py-5 bg-white rounded-[2rem] border border-gray-200 outline-none focus:border-black focus:ring-1 focus:ring-black transition-all resize-none" placeholder="Tell us about your project goals, timeline, and budget..."></textarea>
+                  <textarea name="Message" required rows={5} className="px-6 py-5 bg-white rounded-[2rem] border border-gray-200 outline-none focus:border-black focus:ring-1 focus:ring-black transition-all resize-none" placeholder="Tell us about your project goals, timeline, and budget..."></textarea>
                 </div>
                 
                 <button type="submit" className="w-full bg-black text-white px-8 py-5 rounded-full text-lg font-bold hover:bg-gray-800 transform hover:-translate-y-1 transition-all duration-300 shadow-lg mt-4">

@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const ProjectCard = ({ title, category, children }: { title: string; category: string; children: React.ReactNode }) => (
   <div className="min-w-[320px] md:min-w-[400px] lg:min-w-[450px] bg-white rounded-[40px] p-8 shadow-[0_15px_40px_rgba(0,0,0,0.04)] snap-center flex-shrink-0 group cursor-pointer transition-transform duration-500 hover:-translate-y-2 border border-black/[0.02]">
@@ -94,12 +95,12 @@ export default function Projects() {
 
       {/* CTA Button Bottom Right */}
       <div className="container mx-auto px-6 max-w-7xl relative z-20 flex justify-end">
-        <button className="bg-[#18181b] text-white px-8 py-4 rounded-full font-bold text-[15px] flex items-center gap-3 hover:bg-black transition-colors shadow-xl group">
+        <Link href="/ourworks" className="bg-[#18181b] text-white px-8 py-4 rounded-full font-bold text-[15px] flex items-center gap-3 hover:bg-black transition-colors shadow-xl group">
           See all projects
           <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
             <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
-        </button>
+        </Link>
       </div>
 
     </section>
