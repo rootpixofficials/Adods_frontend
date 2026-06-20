@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: "Adods - Your Digital Growth Partner in Kerala",
   description: "Welcome to Addods - Your creative digital partner",
   icons: {
-    icon: "/Images/adods logo finel_.png", // Attempting the primary adods logo name
+    icon: "/images/adods logo finel_.png", // Attempting the primary adods logo name
   },
 };
 

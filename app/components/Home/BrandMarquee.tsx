@@ -2,7 +2,7 @@ import React from "react";
 
 export default function BrandMarquee() {
   // Generate logo paths from 1 to 61 to populate the marquee
-  const logos = Array.from({ length: 61 }, (_, i) => `/Images/Brandlogos/logo ${i + 1}.png`);
+  const logos = Array.from({ length: 61 }, (_, i) => `/images/Brandlogos/logo ${i + 1}.png`);
 
   return (
     <div className="w-full mt-20 md:mt-28 py-10 md:py-14 bg-[#0a0a0a] flex flex-col relative z-10 overflow-hidden border-y border-white/5">

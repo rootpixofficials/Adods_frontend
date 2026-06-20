@@ -54,7 +54,7 @@ A leading digital marketing agency in Kerala offering SEO services, social media
           >
             <div className="w-full h-full relative rounded-[32px] overflow-hidden grayscale-[40%] hover:grayscale-0 transition-all duration-700 shadow-sm border border-black/5">
               <Image
-                src="/Images/Screenshot 2026-03-19 022454.png"
+                src="/images/Screenshot 2026-03-19 022454.png"
                 alt="Team collaborating"
                 fill
                 className="object-cover"
@@ -112,7 +112,7 @@ A leading digital marketing agency in Kerala offering SEO services, social media
                 {/* The actual second image placed inside the cutout */}
                 <div className="absolute inset-0 top-6 left-6 rounded-tl-[24px] md:rounded-tl-[32px] overflow-hidden grayscale-[40%] hover:grayscale-0 transition-all duration-700 shadow-sm border-t border-l border-black/5">
                   <Image
-                    src="/Images/Screenshot 2026-03-19 024052.png"
+                    src="/images/Screenshot 2026-03-19 024052.png"
                     alt="Working together"
                     fill
                     className="object-cover"

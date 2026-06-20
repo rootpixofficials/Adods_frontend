@@ -58,7 +58,7 @@ export default function Navbar() {
           <div className="transition-all duration-500">
             {!imageError ? (
               <Image
-                src={isDarkNav ? "/Images/adods_white_logo.png" : "/Images/adods.png"}
+                src={isDarkNav ? "/images/adods_white_logo.png" : "/images/adods.png"}
                 alt="Addods Logo"
                 width={120}
                 height={40}

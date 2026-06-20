@@ -21,7 +21,7 @@ export default function Orbit() {
       {/* Central Sun - Adods Logo */}
       <div className="absolute z-10 w-32 h-32 md:w-36 md:h-36 bg-black rounded-full shadow-xl flex flex-col items-center justify-center border-4 border-white transition-transform duration-300 group-hover:scale-110">
         <Image
-          src="/Images/adods_white_logo.png"
+          src="/images/adods_white_logo.png"
           alt="ADODS Logo"
           width={128}
           height={64}

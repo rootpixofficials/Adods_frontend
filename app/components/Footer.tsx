@@ -10,7 +10,7 @@ export default function Footer() {
           {/* Logo and Description */}
           <div className="col-span-1 md:col-span-2">
             <Image
-              src="/Images/adods.png"
+              src="/images/adods.png"
               alt="Addods Logo"
               width={120}
               height={40}
