@@ -25,15 +25,16 @@ export default function Projects() {
   const topRowProjects = homeProjects.slice(0, halfLength);
   const bottomRowProjects = homeProjects.slice(halfLength);
 
+  // Duplicate the arrays several times so they are guaranteed to overflow the screen width (required for pingpong animation)
+  const duplicatedTopRow = [...topRowProjects, ...topRowProjects, ...topRowProjects, ...topRowProjects];
+  const duplicatedBottomRow = [...bottomRowProjects, ...bottomRowProjects, ...bottomRowProjects, ...bottomRowProjects];
+
   return (
     <section className="bg-transparent py-24 md:py-32 overflow-hidden relative">
       <style dangerouslySetInnerHTML={{__html: `
-        .no-scrollbar::-webkit-scrollbar {
-          display: none;
-        }
-        .no-scrollbar {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
+        @keyframes pingpong {
+          0% { transform: translateX(0%); }
+          100% { transform: translateX(calc(-100% + 100vw)); }
         }
       `}} />
 
@@ -58,21 +59,21 @@ export default function Projects() {
       </div>
 
       {/* Two Independent Scrolling Rows */}
-      <div className="w-full relative z-20 pb-10 flex flex-col gap-6">
+      <div className="w-full relative z-20 pb-10 flex flex-col gap-6 overflow-hidden">
         
-        {/* Top Row */}
-        <div className="flex gap-4 lg:gap-6 overflow-x-auto no-scrollbar px-6 md:px-12 xl:px-[calc(50vw-640px+3rem)] snap-x snap-mandatory items-start">
-          {topRowProjects.map((project, idx) => (
-            <div key={idx} className="snap-center flex-shrink-0 w-[85vw] sm:w-[340px] lg:w-[calc(25vw-1.5rem)] xl:w-[295px]">
+        {/* Top Row Track */}
+        <div className="flex gap-4 lg:gap-6 w-max animate-[pingpong_35s_linear_infinite_alternate] hover:[animation-play-state:paused] items-start pl-6">
+          {duplicatedTopRow.map((project, idx) => (
+            <div key={idx} className="flex-shrink-0 w-[85vw] sm:w-[340px] lg:w-[400px]">
               <ProjectCard project={project} />
             </div>
           ))}
         </div>
 
-        {/* Bottom Row */}
-        <div className="flex gap-4 lg:gap-6 overflow-x-auto no-scrollbar px-6 md:px-12 xl:px-[calc(50vw-640px+3rem)] snap-x snap-mandatory items-start">
-          {bottomRowProjects.map((project, idx) => (
-            <div key={idx} className="snap-center flex-shrink-0 w-[85vw] sm:w-[340px] lg:w-[calc(25vw-1.5rem)] xl:w-[295px]">
+        {/* Bottom Row Track */}
+        <div className="flex gap-4 lg:gap-6 w-max animate-[pingpong_35s_linear_infinite_alternate_reverse] hover:[animation-play-state:paused] items-start pl-6">
+          {duplicatedBottomRow.map((project, idx) => (
+            <div key={idx} className="flex-shrink-0 w-[85vw] sm:w-[340px] lg:w-[400px]">
               <ProjectCard project={project} />
             </div>
           ))}

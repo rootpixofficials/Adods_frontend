@@ -6,9 +6,6 @@ export default function BrandMarquee() {
 
   return (
     <div className="w-full mt-20 md:mt-28 py-10 md:py-14 bg-transparent flex flex-col relative z-10 overflow-hidden">
-      <h3 className="text-gray-300 text-sm md:text-base font-semibold tracking-wide mb-8 md:mb-12 text-center px-4 self-center">
-        Sustainable Growth For Your Brand
-      </h3>
       
       {/* Ticker Container */}
       <div className="flex w-full overflow-hidden">
@@ -21,12 +18,12 @@ export default function BrandMarquee() {
             {logos.map((src, idx) => (
               <div 
                 key={idx} 
-                className="w-[240px] md:w-[360px] flex-shrink-0 flex items-center justify-center py-6 px-4 md:py-8 md:px-8 transition-opacity duration-300 cursor-pointer group"
+                className="w-[300px] md:w-[450px] flex-shrink-0 flex items-center justify-center py-6 px-4 md:py-8 md:px-8 transition-opacity duration-300 cursor-pointer group"
               >
                 <img 
                   src={src} 
                   alt={`Client Logo ${idx + 1}`} 
-                  className="w-40 md:w-56 h-20 md:h-28 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300"
+                  className="w-52 md:w-72 h-28 md:h-36 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300"
                 />
               </div>
             ))}
@@ -37,12 +34,12 @@ export default function BrandMarquee() {
             {logos.map((src, idx) => (
               <div 
                 key={`dup-${idx}`} 
-                className="w-[240px] md:w-[360px] flex-shrink-0 flex items-center justify-center py-6 px-4 md:py-8 md:px-8 transition-opacity duration-300 cursor-pointer group"
+                className="w-[300px] md:w-[450px] flex-shrink-0 flex items-center justify-center py-6 px-4 md:py-8 md:px-8 transition-opacity duration-300 cursor-pointer group"
               >
                 <img 
                   src={src} 
                   alt={`Client Logo ${idx + 1}`} 
-                  className="w-40 md:w-56 h-20 md:h-28 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300"
+                  className="w-52 md:w-72 h-28 md:h-36 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300"
                 />
               </div>
             ))}
