@@ -53,14 +53,14 @@ export default function OurWorks() {
       {/* Gallery */}
       <div className="py-24 px-6 bg-gray-50">
         <div className="container mx-auto max-w-[1400px]">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div className="columns-1 md:columns-2 lg:columns-3 gap-10 space-y-10">
             {displayedProjects.map((project, idx) => (
-              <AnimatedSection key={idx} direction="up" delay={idx * 0.1} className="group cursor-pointer overflow-hidden shadow-md block h-[280px] md:h-[320px] lg:h-[350px] w-full border border-black/5">
+              <AnimatedSection key={idx} direction="up" delay={idx * 0.1} className="group cursor-pointer overflow-hidden shadow-md block h-auto w-full border border-black/5 break-inside-avoid">
                 <div className="w-full h-full flex items-center justify-center transition-transform duration-700 group-hover:scale-105">
                   <img 
                     src={project.image} 
                     alt={project.title} 
-                    className="w-full h-full object-cover"
+                    className="w-full h-auto block"
                   />
                 </div>
               </AnimatedSection>
