@@ -55,12 +55,12 @@ export default function OurWorks() {
         <div className="container mx-auto max-w-[1400px]">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {displayedProjects.map((project, idx) => (
-              <AnimatedSection key={idx} direction="up" delay={idx * 0.1} className="group cursor-pointer rounded-[24px] overflow-hidden shadow-sm block h-[280px] md:h-[320px] lg:h-[350px] w-full">
-                <div className="w-full h-full bg-gray-50 flex items-center justify-center p-4 transition-transform duration-700 group-hover:scale-105 border border-black/5">
+              <AnimatedSection key={idx} direction="up" delay={idx * 0.1} className="group cursor-pointer rounded-xl overflow-hidden shadow-md block h-[280px] md:h-[320px] lg:h-[350px] w-full border border-black/5">
+                <div className="w-full h-full flex items-center justify-center transition-transform duration-700 group-hover:scale-105">
                   <img 
                     src={project.image} 
                     alt={project.title} 
-                    className="w-full h-full object-contain"
+                    className="w-full h-full object-cover"
                   />
                 </div>
               </AnimatedSection>

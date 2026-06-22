@@ -3,12 +3,12 @@ import Link from "next/link";
 import { allProjects } from "../../data/projects";
 
 const ProjectCard = ({ project }: { project: any }) => (
-  <Link href="/ourworks" className="relative group overflow-hidden rounded-[24px] shadow-sm block h-[240px] md:h-[280px] lg:h-[300px] cursor-pointer w-full">
-    <div className="w-full h-full bg-gray-50 flex items-center justify-center p-4 transition-transform duration-700 group-hover:scale-105">
+  <Link href="/ourworks" className="relative group overflow-hidden rounded-xl shadow-md block h-[240px] md:h-[280px] lg:h-[300px] cursor-pointer w-full border border-black/5">
+    <div className="w-full h-full flex items-center justify-center transition-transform duration-700 group-hover:scale-105">
       <img 
         src={project.image} 
         alt={project.title} 
-        className="w-full h-full object-contain"
+        className="w-full h-full object-cover"
       />
     </div>
   </Link>
