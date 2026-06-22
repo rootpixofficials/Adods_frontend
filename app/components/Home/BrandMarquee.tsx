@@ -26,7 +26,7 @@ export default function BrandMarquee() {
                 <img 
                   src={src} 
                   alt={`Client Logo ${idx + 1}`} 
-                  className="w-40 md:w-56 h-20 md:h-28 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300 brightness-0 invert"
+                  className="w-40 md:w-56 h-20 md:h-28 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300"
                 />
               </div>
             ))}
@@ -42,7 +42,7 @@ export default function BrandMarquee() {
                 <img 
                   src={src} 
                   alt={`Client Logo ${idx + 1}`} 
-                  className="w-40 md:w-56 h-20 md:h-28 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300 brightness-0 invert"
+                  className="w-40 md:w-56 h-20 md:h-28 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300"
                 />
               </div>
             ))}
