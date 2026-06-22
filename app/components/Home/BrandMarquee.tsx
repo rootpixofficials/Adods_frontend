@@ -5,13 +5,13 @@ export default function BrandMarquee() {
   const logos = Array.from({ length: 61 }, (_, i) => `/images/Brandlogos/logo ${i + 1}.png`);
 
   return (
-    <div className="w-full mt-20 md:mt-28 py-10 md:py-14 bg-white/5 backdrop-blur-sm flex flex-col relative z-10 overflow-hidden border-y border-white/10">
+    <div className="w-full mt-20 md:mt-28 py-10 md:py-14 bg-transparent flex flex-col relative z-10 overflow-hidden">
       <h3 className="text-gray-300 text-sm md:text-base font-semibold tracking-wide mb-8 md:mb-12 text-center px-4 self-center">
         Sustainable Growth For Your Brand
       </h3>
       
-      {/* Ticker Container with Top Border */}
-      <div className="flex w-full overflow-hidden border-t border-white/10">
+      {/* Ticker Container */}
+      <div className="flex w-full overflow-hidden">
         
         {/* Animated Track */}
         <div className="flex w-fit animate-[marquee_120s_linear_infinite] hover:[animation-play-state:paused]">
@@ -21,7 +21,7 @@ export default function BrandMarquee() {
             {logos.map((src, idx) => (
               <div 
                 key={idx} 
-                className="w-[240px] md:w-[360px] flex-shrink-0 flex items-center justify-center py-6 px-4 md:py-8 md:px-8 border-r border-white/10 hover:bg-white/10 transition-colors duration-300 cursor-pointer group"
+                className="w-[240px] md:w-[360px] flex-shrink-0 flex items-center justify-center py-6 px-4 md:py-8 md:px-8 transition-opacity duration-300 cursor-pointer group"
               >
                 <img 
                   src={src} 
@@ -37,7 +37,7 @@ export default function BrandMarquee() {
             {logos.map((src, idx) => (
               <div 
                 key={`dup-${idx}`} 
-                className="w-[240px] md:w-[360px] flex-shrink-0 flex items-center justify-center py-6 px-4 md:py-8 md:px-8 border-r border-white/10 hover:bg-white/10 transition-colors duration-300 cursor-pointer group"
+                className="w-[240px] md:w-[360px] flex-shrink-0 flex items-center justify-center py-6 px-4 md:py-8 md:px-8 transition-opacity duration-300 cursor-pointer group"
               >
                 <img 
                   src={src} 
