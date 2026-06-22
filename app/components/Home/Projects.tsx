@@ -17,8 +17,8 @@ const ProjectCard = ({ project }: { project: any }) => (
 export default function Projects() {
   const dummyText = "Take a look at some of the digital experiences we've crafted to help businesses grow and engage their audiences effectively.";
 
-  // Filter projects up to Web Design (Exclude Web Development)
-  const homeProjects = allProjects.filter(p => p.category !== "Web Development");
+  // Filter projects to only show Branding and Marketing
+  const homeProjects = allProjects.filter(p => p.category === "Branding" || p.category === "Marketing");
 
   // Split into two rows
   const halfLength = Math.ceil(homeProjects.length / 2);
