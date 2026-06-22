@@ -3,7 +3,7 @@ import Link from "next/link";
 import { allProjects } from "../../data/projects";
 
 const ProjectCard = ({ project }: { project: any }) => (
-  <Link href="/ourworks" className="relative group overflow-hidden rounded-xl shadow-md block h-[240px] md:h-[280px] lg:h-[300px] cursor-pointer w-full border border-black/5">
+  <Link href="/ourworks" className="relative group overflow-hidden shadow-md block h-[240px] md:h-[280px] lg:h-[300px] cursor-pointer w-full border border-black/5">
     <div className="w-full h-full flex items-center justify-center transition-transform duration-700 group-hover:scale-105">
       <img 
         src={project.image} 
@@ -61,7 +61,7 @@ export default function Projects() {
       <div className="w-full relative z-20 pb-10 flex flex-col gap-6">
         
         {/* Top Row */}
-        <div className="flex gap-4 lg:gap-6 overflow-x-auto no-scrollbar pl-6 md:pl-12 xl:pl-[calc(50vw-640px)] pr-6 snap-x snap-mandatory">
+        <div className="flex gap-4 lg:gap-6 overflow-x-auto no-scrollbar px-6 md:px-12 xl:px-[calc(50vw-640px+3rem)] snap-x snap-mandatory">
           {topRowProjects.map((project, idx) => (
             <div key={idx} className="snap-center flex-shrink-0 w-[85vw] sm:w-[340px] lg:w-[calc(25vw-1.5rem)] xl:w-[295px]">
               <ProjectCard project={project} />
@@ -70,7 +70,7 @@ export default function Projects() {
         </div>
 
         {/* Bottom Row */}
-        <div className="flex gap-4 lg:gap-6 overflow-x-auto no-scrollbar pl-6 md:pl-12 xl:pl-[calc(50vw-640px)] pr-6 snap-x snap-mandatory">
+        <div className="flex gap-4 lg:gap-6 overflow-x-auto no-scrollbar px-6 md:px-12 xl:px-[calc(50vw-640px+3rem)] snap-x snap-mandatory">
           {bottomRowProjects.map((project, idx) => (
             <div key={idx} className="snap-center flex-shrink-0 w-[85vw] sm:w-[340px] lg:w-[calc(25vw-1.5rem)] xl:w-[295px]">
               <ProjectCard project={project} />
