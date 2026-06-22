@@ -55,26 +55,13 @@ export default function OurWorks() {
         <div className="container mx-auto max-w-[1400px]">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {displayedProjects.map((project, idx) => (
-              <AnimatedSection key={idx} direction="up" delay={idx * 0.1} className="group cursor-pointer rounded-[2.5rem] bg-white p-4 shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100 flex flex-col">
-                <div className="relative w-full h-[320px] overflow-hidden rounded-[2rem] mb-6 bg-gray-100">
-                  <div className="absolute inset-0 bg-black/20 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  {/* View Project Pill hover effect */}
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-4 group-hover:-translate-y-1/2">
-                    <span className="bg-white text-black px-6 py-3 rounded-full font-bold text-sm shadow-xl inline-block whitespace-nowrap">
-                      View full case study
-                    </span>
-                  </div>
-                  <img src={project.image} alt={project.title} className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" />
-                </div>
-                
-                <div className="flex flex-col px-4 pb-4">
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tags.map((tag, tIdx) => (
-                      <span key={tIdx} className="text-xs font-semibold px-3 py-1 bg-gray-100 rounded-lg text-gray-600 uppercase tracking-widest">{tag}</span>
-                    ))}
-                  </div>
-                  <h3 className="text-3xl font-bold mb-2 tracking-tight">{project.title}</h3>
-                  <span className="text-gray-500 text-lg font-medium">{project.category}</span>
+              <AnimatedSection key={idx} direction="up" delay={idx * 0.1} className="group cursor-pointer rounded-[24px] overflow-hidden shadow-sm block h-[280px] md:h-[320px] lg:h-[350px] w-full">
+                <div className="w-full h-full bg-gray-50 flex items-center justify-center p-4 transition-transform duration-700 group-hover:scale-105 border border-black/5">
+                  <img 
+                    src={project.image} 
+                    alt={project.title} 
+                    className="w-full h-full object-contain"
+                  />
                 </div>
               </AnimatedSection>
             ))}
