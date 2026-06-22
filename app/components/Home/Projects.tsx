@@ -71,7 +71,7 @@ export default function Projects() {
         </div>
 
         {/* Bottom Row Track */}
-        <div className="flex gap-4 lg:gap-6 w-max animate-[pingpong_35s_linear_infinite_alternate_reverse] hover:[animation-play-state:paused] items-start pl-6">
+        <div className="flex gap-4 lg:gap-6 w-max animate-[pingpong_35s_linear_infinite_alternate-reverse] hover:[animation-play-state:paused] items-start pl-6">
           {duplicatedBottomRow.map((project, idx) => (
             <div key={idx} className="flex-shrink-0 w-[85vw] sm:w-[340px] lg:w-[calc(25vw-1.5rem)] xl:w-[295px]">
               <ProjectCard project={project} />
