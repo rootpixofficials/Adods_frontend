@@ -18,10 +18,10 @@ export default function WhoWeAre() {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-transparent text-white">
       {/* Hero Section */}
-      <AnimatedSection className="relative w-full pt-44 pb-24 px-6 bg-black text-white overflow-hidden" direction="none" delay={0.1}>
-        <div className="absolute inset-0 z-0 opacity-20" 
+      <AnimatedSection className="relative w-full pt-44 pb-24 px-6 bg-transparent text-white overflow-hidden" direction="none" delay={0.1}>
+        <div className="absolute inset-0 z-0 opacity-10" 
              style={{ backgroundImage: 'radial-gradient(circle, #ffffff 1.5px, transparent 1.5px)', backgroundSize: '40px 40px' }}></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/5 rounded-full blur-[100px] pointer-events-none"></div>
         <div className="container mx-auto relative z-10 max-w-5xl text-center">
@@ -38,7 +38,7 @@ export default function WhoWeAre() {
       </AnimatedSection>
 
       {/* Story & Stats Section */}
-      <AnimatedSection className="py-24 px-6 bg-white text-black" direction="up" delay={0.2}>
+      <AnimatedSection className="py-24 px-6 bg-transparent text-white" direction="up" delay={0.2}>
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24 items-center">
              <div className="relative w-full aspect-square md:aspect-auto md:h-[600px] rounded-[3rem] overflow-hidden shadow-2xl group">
@@ -48,18 +48,18 @@ export default function WhoWeAre() {
              
              <div className="flex flex-col">
                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 tracking-tight leading-tight">Driven by creativity and analytics</h2>
-               <p className="text-gray-500 leading-relaxed mb-6 text-[17px]">
+               <p className="text-gray-300 leading-relaxed mb-6 text-[17px]">
                  At Addods, we blend cutting-edge strategy with pixel-perfect design. Founded in 2012, our belief is simple: every brand has a unique story, and our mission is to tell it through immersive, high-performing digital experiences.
                </p>
-               <p className="text-gray-500 leading-relaxed text-[17px] mb-12">
+               <p className="text-gray-300 leading-relaxed text-[17px] mb-12">
                  From early-stage startups aiming to disrupt the market to established enterprises undergoing digital transformation, we partner with visionary leaders to build products that command attention and drive real business value.
                </p>
                
                {/* Stats Grid */}
-               <div className="grid grid-cols-2 gap-8 pt-8 border-t border-gray-100">
+               <div className="grid grid-cols-2 gap-8 pt-8 border-t border-white/10">
                  {stats.map((stat, i) => (
                    <div key={i} className="flex flex-col">
-                     <span className="text-4xl md:text-5xl font-bold text-black mb-2">{stat.number}</span>
+                     <span className="text-4xl md:text-5xl font-bold text-white mb-2">{stat.number}</span>
                      <span className="text-sm font-medium text-gray-400 uppercase tracking-wider">{stat.label}</span>
                    </div>
                  ))}
@@ -70,18 +70,18 @@ export default function WhoWeAre() {
       </AnimatedSection>
 
       {/* Team Section */}
-      <AnimatedSection className="py-24 px-6 bg-gray-50 text-black" direction="up" delay={0.2}>
+      <AnimatedSection className="py-24 px-6 bg-transparent text-white" direction="up" delay={0.2}>
         <div className="container mx-auto max-w-7xl">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">Meet the Leadership</h2>
-            <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight text-white">Meet the Leadership</h2>
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
               A diverse team of passionate strategists, designers, and engineers pushing the boundaries of what's possible.
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {team.map((member, idx) => (
-              <div key={idx} className="group relative rounded-[2rem] overflow-hidden bg-white shadow-sm hover:shadow-2xl transition-all duration-500">
+              <div key={idx} className="group relative rounded-[2rem] overflow-hidden bg-white/5 border border-white/10 backdrop-blur-md shadow-sm hover:shadow-2xl transition-all duration-500">
                 <div className="aspect-[4/5] overflow-hidden">
                   <img src={member.image} alt={member.name} className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" />
                 </div>

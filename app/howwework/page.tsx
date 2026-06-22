@@ -31,10 +31,10 @@ export default function HowWeWork() {
   ];
 
   return (
-    <div className="min-h-screen bg-white text-black">
+    <div className="min-h-screen bg-transparent text-white">
       {/* Hero */}
-      <AnimatedSection className="relative w-full pt-44 pb-20 px-6 bg-black text-white overflow-hidden" direction="none">
-        <div className="absolute inset-0 z-0 opacity-20" 
+      <AnimatedSection className="relative w-full pt-44 pb-20 px-6 bg-transparent text-white overflow-hidden" direction="none">
+        <div className="absolute inset-0 z-0 opacity-10" 
              style={{ backgroundImage: 'radial-gradient(circle, #ffffff 1.5px, transparent 1.5px)', backgroundSize: '40px 40px' }}></div>
         <div className="container mx-auto relative z-10 max-w-5xl text-center">
           <span className="px-4 py-1.5 text-xs font-semibold tracking-widest uppercase border border-white/20 rounded-full mb-8 inline-block cursor-default">
@@ -50,7 +50,7 @@ export default function HowWeWork() {
       </AnimatedSection>
 
       {/* Timeline Section */}
-      <div className="py-24 px-6 bg-white">
+      <div className="py-24 px-6 bg-transparent">
         <div className="container mx-auto max-w-5xl relative">
           
           <div className="space-y-24 relative">
@@ -58,32 +58,32 @@ export default function HowWeWork() {
               <AnimatedSection direction="up" delay={0.1} key={index} className="flex flex-col md:flex-row gap-12 group">
                 {/* Visual Step Indicator */}
                 <div className="hidden md:flex flex-col items-center">
-                  <div className="w-16 h-16 rounded-full bg-black text-white flex items-center justify-center text-2xl font-bold shadow-xl group-hover:scale-110 transition-transform duration-500">
+                  <div className="w-16 h-16 rounded-full bg-white text-[#19002a] flex items-center justify-center text-2xl font-bold shadow-xl group-hover:scale-110 transition-transform duration-500">
                     {index + 1}
                   </div>
                   {index !== steps.length - 1 && (
-                    <div className="w-0.5 h-full bg-gradient-to-b from-black to-gray-200 mt-4 opacity-50"></div>
+                    <div className="w-0.5 h-full bg-gradient-to-b from-white to-transparent mt-4 opacity-30"></div>
                   )}
                 </div>
 
                 {/* Content block */}
-                <div className={`flex-1 p-10 bg-gray-50 rounded-[2.5rem] border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-500 relative overflow-hidden`}>
-                  <div className="absolute top-0 right-0 p-8 text-8xl font-black text-gray-100/50 -translate-y-6 translate-x-4 pointer-events-none select-none transition-transform duration-500 group-hover:-translate-x-2">
+                <div className={`flex-1 p-10 bg-white/5 rounded-[2.5rem] border border-white/10 shadow-sm hover:shadow-2xl transition-all duration-500 relative overflow-hidden backdrop-blur-md`}>
+                  <div className="absolute top-0 right-0 p-8 text-8xl font-black text-white/5 -translate-y-6 translate-x-4 pointer-events-none select-none transition-transform duration-500 group-hover:-translate-x-2">
                     0{index + 1}
                   </div>
                   
                   <div className="relative z-10">
-                    <span className="inline-block px-4 py-1.5 bg-white border border-gray-200 text-xs font-bold uppercase tracking-widest rounded-full text-black mb-6">
+                    <span className="inline-block px-4 py-1.5 bg-white/10 border border-white/20 text-xs font-bold uppercase tracking-widest rounded-full text-white mb-6">
                       {step.duration}
                     </span>
-                    <h3 className="text-3xl font-bold mb-4 tracking-tight">{step.title}</h3>
-                    <p className="text-gray-500 text-lg leading-relaxed mb-8">{step.desc}</p>
+                    <h3 className="text-3xl font-bold mb-4 tracking-tight text-white">{step.title}</h3>
+                    <p className="text-gray-300 text-lg leading-relaxed mb-8">{step.desc}</p>
                     
                     <div>
-                      <h4 className="font-semibold text-black uppercase tracking-wider text-sm mb-4">Key Deliverables</h4>
+                      <h4 className="font-semibold text-white uppercase tracking-wider text-sm mb-4">Key Deliverables</h4>
                       <div className="flex flex-wrap gap-3">
                         {step.deliverables.map((del, dIdx) => (
-                          <span key={dIdx} className="bg-white border border-gray-200 text-gray-700 px-4 py-2 rounded-[20px] text-sm font-medium shadow-sm">
+                          <span key={dIdx} className="bg-white/10 border border-white/20 text-gray-300 px-4 py-2 rounded-[20px] text-sm font-medium shadow-sm">
                             {del}
                           </span>
                         ))}
@@ -98,10 +98,10 @@ export default function HowWeWork() {
       </div>
       
       {/* FAQ Sneak Peek */}
-      <AnimatedSection className="pb-24 px-6 bg-white" direction="up">
-        <div className="container mx-auto max-w-4xl text-center border-t border-gray-100 pt-24">
-          <h2 className="text-4xl font-bold mb-6 tracking-tight">Got questions?</h2>
-          <p className="text-gray-500 text-lg mb-8">We believe in complete transparency. Ask us anything about our stack, pricing, or timelines.</p>
+      <AnimatedSection className="pb-24 px-6 bg-transparent" direction="up">
+        <div className="container mx-auto max-w-4xl text-center border-t border-white/10 pt-24">
+          <h2 className="text-4xl font-bold mb-6 tracking-tight text-white">Got questions?</h2>
+          <p className="text-gray-300 text-lg mb-8">We believe in complete transparency. Ask us anything about our stack, pricing, or timelines.</p>
         </div>
       </AnimatedSection>
 
