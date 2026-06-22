@@ -9,21 +9,6 @@ const ProjectCard = ({ project }: { project: any }) => (
       alt={project.title} 
       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
     />
-    {/* Gradient overlay for readability */}
-    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
-    
-    {/* Text Overlay */}
-    <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-      <div className="flex flex-wrap gap-2 mb-2">
-        {project.tags && project.tags.slice(0, 2).map((tag: string, idx: number) => (
-          <span key={idx} className="bg-white/20 backdrop-blur-md text-white text-[10px] md:text-[11px] uppercase tracking-wider font-bold px-3 py-1 rounded-full border border-white/30">
-            {tag}
-          </span>
-        ))}
-      </div>
-      <h3 className="text-white text-xl md:text-2xl font-bold leading-tight">{project.title}</h3>
-      <p className="text-gray-300 text-xs md:text-sm font-medium mt-1">{project.category}</p>
-    </div>
   </Link>
 );
 
@@ -33,46 +18,24 @@ export default function Projects() {
   // Filter projects up to Web Design (Exclude Web Development)
   const homeProjects = allProjects.filter(p => p.category !== "Web Development");
 
+  // Split into two rows
+  const halfLength = Math.ceil(homeProjects.length / 2);
+  const topRowProjects = homeProjects.slice(0, halfLength);
+  const bottomRowProjects = homeProjects.slice(halfLength);
+
   return (
     <section className="bg-[#fcfcfc] py-24 md:py-32 overflow-hidden relative">
       <style dangerouslySetInnerHTML={{__html: `
-        .scroll-container::-webkit-scrollbar {
-          height: 6px;
+        .no-scrollbar::-webkit-scrollbar {
+          display: none;
         }
-        .scroll-container::-webkit-scrollbar-track {
-          background: transparent; 
-        }
-        .scroll-container::-webkit-scrollbar-thumb {
-          background: #e5e5e5; 
-          border-radius: 10px;
-        }
-        .scroll-container::-webkit-scrollbar-thumb:hover {
-          background: #ccc; 
-        }
-
-        /* Responsive grid columns */
-        .scroll-grid {
-          grid-auto-columns: calc(85vw - 1.5rem);
-        }
-        @media (min-width: 640px) {
-          .scroll-grid {
-            grid-auto-columns: 340px;
-          }
-        }
-        @media (min-width: 1024px) {
-          .scroll-grid {
-            grid-auto-columns: calc(25vw - 1.5rem);
-            max-width: none;
-          }
-        }
-        @media (min-width: 1280px) {
-          .scroll-grid {
-            grid-auto-columns: 295px; /* Fits exactly 4 in the 1280px container width */
-          }
+        .no-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
         }
       `}} />
 
-      <div className="container mx-auto px-6 max-w-7xl relative z-10">
+      <div className="container mx-auto px-6 md:px-12 max-w-7xl relative z-10">
         
         {/* Header Section */}
         <div className="flex flex-col items-start gap-4 mb-12 lg:mb-16">
@@ -92,25 +55,31 @@ export default function Projects() {
         </div>
       </div>
 
-      {/* Horizontally Scrollable 2-Row Grid Container */}
-      <div className="pl-6 md:pl-[calc(50vw-384px)] lg:pl-[calc(50vw-640px)] w-full relative z-20 pb-10">
-        <div 
-          className="scroll-container scroll-grid grid gap-4 lg:gap-6 overflow-x-auto pr-6 pb-8 snap-x snap-mandatory"
-          style={{ 
-            gridTemplateRows: 'repeat(2, minmax(0, 1fr))',
-            gridAutoFlow: 'column'
-          }}
-        >
-          {homeProjects.map((project, idx) => (
-            <div key={idx} className="snap-center w-full h-full">
+      {/* Two Independent Scrolling Rows */}
+      <div className="w-full relative z-20 pb-10 flex flex-col gap-6">
+        
+        {/* Top Row */}
+        <div className="flex gap-4 lg:gap-6 overflow-x-auto no-scrollbar pl-6 md:pl-12 xl:pl-[calc(50vw-640px)] pr-6 snap-x snap-mandatory">
+          {topRowProjects.map((project, idx) => (
+            <div key={idx} className="snap-center flex-shrink-0 w-[85vw] sm:w-[340px] lg:w-[calc(25vw-1.5rem)] xl:w-[295px]">
               <ProjectCard project={project} />
             </div>
           ))}
         </div>
+
+        {/* Bottom Row */}
+        <div className="flex gap-4 lg:gap-6 overflow-x-auto no-scrollbar pl-6 md:pl-12 xl:pl-[calc(50vw-640px)] pr-6 snap-x snap-mandatory">
+          {bottomRowProjects.map((project, idx) => (
+            <div key={idx} className="snap-center flex-shrink-0 w-[85vw] sm:w-[340px] lg:w-[calc(25vw-1.5rem)] xl:w-[295px]">
+              <ProjectCard project={project} />
+            </div>
+          ))}
+        </div>
+
       </div>
 
       {/* CTA Button Bottom Right */}
-      <div className="container mx-auto px-6 max-w-7xl relative z-20 flex justify-end mt-4">
+      <div className="container mx-auto px-6 md:px-12 max-w-7xl relative z-20 flex justify-end mt-4">
         <Link href="/ourworks" className="bg-[#18181b] text-white px-8 py-4 rounded-full font-bold text-[15px] flex items-center gap-3 hover:bg-black transition-colors shadow-xl group">
           See all projects
           <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
