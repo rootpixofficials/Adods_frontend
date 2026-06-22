@@ -3,8 +3,8 @@ import Link from 'next/link';
 
 const CTA = () => {
   return (
-    <section className="w-full pb-20 pt-10 px-4 md:px-6 bg-white flex justify-center">
-      <div className="container max-w-5xl rounded-[3rem] bg-gradient-to-br from-[#1a1a1a] via-[#050505] to-[#121212] p-12 md:p-24 flex flex-col items-center text-center shadow-[0_20px_50px_rgba(0,0,0,0.3)] relative overflow-hidden group">
+    <section className="w-full pb-20 pt-10 px-4 md:px-6 bg-transparent flex justify-center">
+      <div className="container max-w-5xl rounded-[3rem] bg-white/5 backdrop-blur-lg border border-white/20 p-12 md:p-24 flex flex-col items-center text-center shadow-[0_20px_50px_rgba(0,0,0,0.3)] relative overflow-hidden group">
         
         {/* Subtle glass effect or light glow */}
         <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-white/[0.03] rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 pointer-events-none transition-transform duration-1000 group-hover:scale-110"></div>
@@ -19,7 +19,7 @@ const CTA = () => {
         </p>
         
         <div className="relative z-10 flex items-center justify-center">
-          <Link href="/contact" className="peer flex items-center justify-center bg-white text-black px-10 py-4 rounded-[40px] font-semibold text-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 hover:shadow-[0_0_25px_rgba(255,255,255,0.25)]">
+          <Link href="/contact" className="peer flex items-center justify-center bg-white text-[#19002a] px-10 py-4 rounded-[40px] font-semibold text-lg hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 hover:shadow-[0_0_25px_rgba(255,255,255,0.25)]">
             Send us a message
           </Link>
           

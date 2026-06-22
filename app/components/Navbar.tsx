@@ -46,9 +46,9 @@ export default function Navbar() {
     <nav
       className={`fixed w-full z-50 transition-all duration-500 h-20 ${
         isMenuOpen
-          ? "bg-black text-white"
-          : isDarkNav
-            ? "bg-black/80 backdrop-blur-md text-white shadow-sm"
+          ? "bg-[#19002a] text-white"
+          : isScrolled
+            ? "bg-[#19002a]/80 backdrop-blur-md text-white shadow-sm border-b border-white/10"
             : "bg-transparent"
       }`}
     >
@@ -58,7 +58,7 @@ export default function Navbar() {
           <div className="transition-all duration-500">
             {!imageError ? (
               <Image
-                src={isDarkNav ? "/images/adods_white_logo.png" : "/images/adods.png"}
+                src="/images/adods_white_logo.png"
                 alt="Addods Logo"
                 width={120}
                 height={40}
@@ -67,9 +67,7 @@ export default function Navbar() {
                 onError={() => setImageError(true)}
               />
             ) : (
-              <span className={`text-xl font-bold ${
-                isDarkNav ? "text-white" : "text-black"
-              }`}>
+              <span className="text-xl font-bold text-white">
                 ADDODS
               </span>
             )}
@@ -86,20 +84,14 @@ export default function Navbar() {
                 key={link.path}
                 href={link.path}
                 className={`font-medium tracking-wide transition-all duration-300 relative group h-full flex items-center ${
-                  isDarkNav
-                    ? isActive 
-                      ? "text-white" 
-                      : "text-gray-400 hover:text-white"
-                    : isActive
-                      ? "text-black"
-                      : "text-gray-500 hover:text-black"
+                  isActive 
+                    ? "text-white" 
+                    : "text-gray-300 hover:text-white"
                 }`}
               >
                 {link.name}
                 <span
-                  className={`absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full ${
-                    isDarkNav ? "bg-white" : "bg-black"
-                  } ${isActive ? "w-full" : ""}`}
+                  className={`absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full ${isActive ? "w-full" : ""}`}
                 ></span>
               </Link>
             );
@@ -109,11 +101,7 @@ export default function Navbar() {
         {/* Contact Us Button */}
         <Link
           href="/contact"
-          className={`hidden md:flex items-center justify-center px-7 py-2.5 rounded-full font-semibold transition-all duration-300 ${
-            isDarkNav
-              ? "bg-white text-black hover:bg-gray-200 shadow-[0_0_15px_rgba(255,255,255,0.1)] hover:shadow-[0_0_20px_rgba(255,255,255,0.3)]"
-              : "bg-black text-white hover:bg-gray-800"
-          }`}
+          className="hidden md:flex items-center justify-center px-7 py-2.5 rounded-full font-semibold transition-all duration-300 bg-white text-[#19002a] hover:bg-gray-200 shadow-[0_0_15px_rgba(255,255,255,0.1)] hover:shadow-[0_0_20px_rgba(255,255,255,0.3)]"
         >
           Contact Us
         </Link>
@@ -125,25 +113,19 @@ export default function Navbar() {
           aria-label="Toggle menu"
         >
           <div
-            className={`w-6 h-0.5 transition-all duration-300 absolute ${
-              isDarkNav || isMenuOpen ? "bg-white" : "bg-black"
-            } ${isMenuOpen ? "rotate-45" : "-translate-y-2"}`}
+            className={`w-6 h-0.5 transition-all duration-300 absolute bg-white ${isMenuOpen ? "rotate-45" : "-translate-y-2"}`}
           ></div>
           <div
-            className={`w-6 h-0.5 transition-all duration-300 absolute ${
-              isDarkNav || isMenuOpen ? "bg-white" : "bg-black"
-            } ${isMenuOpen ? "opacity-0" : "opacity-100"}`}
+            className={`w-6 h-0.5 transition-all duration-300 absolute bg-white ${isMenuOpen ? "opacity-0" : "opacity-100"}`}
           ></div>
           <div
-            className={`w-6 h-0.5 transition-all duration-300 absolute ${
-              isDarkNav || isMenuOpen ? "bg-white" : "bg-black"
-            } ${isMenuOpen ? "-rotate-45" : "translate-y-2"}`}
+            className={`w-6 h-0.5 transition-all duration-300 absolute bg-white ${isMenuOpen ? "-rotate-45" : "translate-y-2"}`}
           ></div>
         </button>
 
         {/* Mobile Menu */}
         <div
-          className={`fixed inset-0 bg-black flex items-center justify-center transition-all duration-500 z-40 ${
+          className={`fixed inset-0 bg-[#19002a] flex items-center justify-center transition-all duration-500 z-40 ${
             isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
           } md:hidden`}
         >
@@ -166,7 +148,7 @@ export default function Navbar() {
             })}
             <Link
               href="/contact"
-              className="mt-8 bg-white text-black px-10 py-4 rounded-full text-xl font-bold transition-transform hover:scale-105"
+              className="mt-8 bg-white text-[#19002a] px-10 py-4 rounded-full text-xl font-bold transition-transform hover:scale-105"
               onClick={() => setIsMenuOpen(false)}
             >
               Contact Us

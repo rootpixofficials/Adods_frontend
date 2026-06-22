@@ -9,7 +9,7 @@ const cardVariants: Variants = {
 const ServiceCard = ({ title, desc }: { title: string; desc: string }) => (
   <motion.div 
     variants={cardVariants}
-    className="relative bg-[#0a0a0a] border border-white/10 rounded-[32px] p-8 md:p-10 transition-all duration-500 hover:bg-[#111111] hover:border-white/20 group"
+    className="relative bg-white/5 backdrop-blur-md border border-white/10 rounded-[32px] p-8 md:p-10 transition-all duration-500 hover:bg-white/10 hover:border-white/20 group"
   >
     
     {/* Subtle Inner Glow on Hover */}
@@ -48,7 +48,7 @@ export default function WhatWeDo() {
   ];
 
   return (
-    <section className="bg-black py-24 md:py-32 overflow-hidden relative selection:bg-white/20">
+    <section className="bg-transparent py-24 md:py-32 overflow-hidden relative selection:bg-white/20">
       
       {/* Background Radial Glow (Top Left) */}
       <div 

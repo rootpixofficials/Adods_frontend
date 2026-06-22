@@ -3,14 +3,13 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function Footer() {
-  return (
-    <footer className="bg-white text-white py-12  shadow-md">
+    <footer className="bg-transparent border-t border-white/10 text-white py-12 mt-20">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo and Description */}
           <div className="col-span-1 md:col-span-2">
             <Image
-              src="/images/adods.png"
+              src="/images/adods_white_logo.png"
               alt="Addods Logo"
               width={120}
               height={40}
@@ -26,32 +25,32 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/" className="text-gray-400 hover:text-black transition-colors border-b border-transparent hover:border-black inline-block">
+                <Link href="/" className="text-gray-300 hover:text-white transition-colors border-b border-transparent hover:border-white inline-block">
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/whoweare" className="text-gray-400 hover:text-black transition-colors border-b border-transparent hover:border-black inline-block">
+                <Link href="/whoweare" className="text-gray-300 hover:text-white transition-colors border-b border-transparent hover:border-white inline-block">
                   Who We Are
                 </Link>
               </li>
               <li>
-                <Link href="/whatwedo" className="text-gray-400 hover:text-black transition-colors border-b border-transparent hover:border-black inline-block">
+                <Link href="/whatwedo" className="text-gray-300 hover:text-white transition-colors border-b border-transparent hover:border-white inline-block">
                   What We Do
                 </Link>
               </li>
               <li>
-                <Link href="/ourworks" className="text-gray-400 hover:text-black transition-colors border-b border-transparent hover:border-black inline-block">
+                <Link href="/ourworks" className="text-gray-300 hover:text-white transition-colors border-b border-transparent hover:border-white inline-block">
                   Our Works
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="text-gray-400 hover:text-black transition-colors border-b border-transparent hover:border-black inline-block">
+                <Link href="/blog" className="text-gray-300 hover:text-white transition-colors border-b border-transparent hover:border-white inline-block">
                   Blog
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-gray-400 hover:text-black transition-colors border-b border-transparent hover:border-black inline-block">
+                <Link href="/contact" className="text-gray-300 hover:text-white transition-colors border-b border-transparent hover:border-white inline-block">
                   Contact
                 </Link>
               </li>
@@ -70,7 +69,7 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
+        <div className="border-t border-white/10 mt-8 pt-8 text-center text-gray-400 text-sm">
           <p>&copy; {new Date().getFullYear()} Addods. All rights reserved.</p>
         </div>
       </div>

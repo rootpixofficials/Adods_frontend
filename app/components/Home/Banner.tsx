@@ -5,7 +5,7 @@ import BrandMarquee from "./BrandMarquee";
 
 export default function Banner() {
   return (
-    <section className="bg-white pt-24 pb-10 md:pt-32 overflow-hidden relative">
+    <section className="bg-transparent pt-24 pb-10 md:pt-32 overflow-hidden relative">
 
       {/* Minimal Animated Background Elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
@@ -21,46 +21,46 @@ export default function Banner() {
           <div className="max-w-2xl relative z-20">
             {/* "Welcome to Adods" - Animated Pill bouncing slightly */}
             <div className="inline-block relative mb-8 animate-breath hover:[animation-play-state:paused]">
-              <span className="border border-gray-300 rounded-full px-5 py-2 text-sm text-gray-700 font-semibold tracking-wide shadow-sm bg-white/80 backdrop-blur-sm cursor-default hover:bg-gray-50 transition-colors">
+              <span className="border border-white/20 rounded-full px-5 py-2 text-sm text-white font-semibold tracking-wide shadow-sm bg-white/10 backdrop-blur-sm cursor-default hover:bg-white/20 transition-colors">
                 Welcome to Adods
               </span>
             </div>
 
             {/* Main heading */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight relative mb-8 text-gray-900">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight relative mb-8 text-white">
               <span className="block">Your Digital Growth</span>
               <span className="block mt-2">Partner </span>
               <span className="block mt-2 relative inline-block">
                 in Kerala ..!
                 {/* Abstract Star SVG next to experiences */}
-                <svg className="hidden sm:block absolute -right-24 top-0 w-20 h-20 text-black animate-[spin_10s_linear_infinite]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
+                <svg className="hidden sm:block absolute -right-24 top-0 w-20 h-20 text-white animate-[spin_10s_linear_infinite]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 2C12 7.525 16.475 12 22 12C16.475 12 12 16.475 12 22C12 16.475 7.525 12 2 12C7.525 12 12 7.525 12 2Z" />
                 </svg>
               </span>
             </h1>
 
             {/* Description */}
-            <p className="text-gray-600 text-base md:text-[17px] max-w-lg leading-relaxed font-medium mb-12 relative z-10">
+            <p className="text-gray-300 text-base md:text-[17px] max-w-lg leading-relaxed font-medium mb-12 relative z-10">
 Driving business growth across Kerala with result-focused digital marketing. A trusted agency in Malappuram offering SEO, social media marketing, Google Ads, and local SEO to reach the right audience. From high-performing websites to creative branding, we deliver affordable, performance-driven solutions that ensure measurable success.        </p>
 
             {/* Button */}
             <div className="flex items-center">
               <Link
                 href="/contact"
-                className="group inline-flex items-center bg-black text-white pl-8 pr-2 py-2 rounded-full text-base font-semibold hover:bg-gray-800 shadow-xl hover:shadow-2xl transition-all duration-300 animate-breath hover:[animation-play-state:paused]"
+                className="group inline-flex items-center bg-white text-[#19002a] pl-8 pr-2 py-2 rounded-full text-base font-semibold hover:bg-gray-200 shadow-[0_0_15px_rgba(255,255,255,0.1)] hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-all duration-300 animate-breath hover:[animation-play-state:paused]"
               >
                 <span className="mr-6">Get Free Consultation </span>
-                <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center group-hover:scale-95 transition-transform shadow-sm">
-                  <svg className="w-5 h-5 text-black group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
+                <div className="w-10 h-10 bg-[#19002a] rounded-full flex items-center justify-center group-hover:scale-95 transition-transform shadow-sm">
+                  <svg className="w-5 h-5 text-white group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
                   </svg>
                 </div>
               </Link>
               {/* Quirky lines next to button */}
               <div className="ml-6 flex gap-2 rotate-12 opacity-80 animate-[pulse_2s_ease-in-out_infinite]">
-                <div className="w-1.5 h-6 bg-black rounded-full mix-blend-multiply"></div>
-                <div className="w-1.5 h-6 bg-black rounded-full translate-y-3 mix-blend-multiply"></div>
-                <div className="w-1.5 h-6 bg-black rounded-full translate-y-1 mix-blend-multiply"></div>
+                <div className="w-1.5 h-6 bg-white rounded-full mix-blend-overlay"></div>
+                <div className="w-1.5 h-6 bg-white rounded-full translate-y-3 mix-blend-overlay"></div>
+                <div className="w-1.5 h-6 bg-white rounded-full translate-y-1 mix-blend-overlay"></div>
               </div>
             </div>
           </div>

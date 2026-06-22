@@ -19,9 +19,9 @@ export default function OurWorks() {
   const displayedProjects = filteredProjects.slice(0, visibleCount);
 
   return (
-    <div className="min-h-screen bg-white text-black">
+    <div className="min-h-screen bg-transparent text-white">
       {/* Hero */}
-      <AnimatedSection className="relative w-full pt-44 pb-20 px-6 bg-black text-white overflow-hidden" direction="none">
+      <AnimatedSection className="relative w-full pt-44 pb-20 px-6 bg-transparent text-white overflow-hidden" direction="none">
         <div className="absolute inset-0 z-0 opacity-20" 
              style={{ backgroundImage: 'radial-gradient(circle, #ffffff 1.5px, transparent 1.5px)', backgroundSize: '40px 40px' }}></div>
         <div className="container mx-auto relative z-10 max-w-6xl text-center">
@@ -41,7 +41,7 @@ export default function OurWorks() {
               <button 
                 key={i} 
                 onClick={() => { setFilter(f); setVisibleCount(6); }}
-                className={`px-6 py-2 rounded-full border text-sm font-semibold transition-all ${filter === f ? "bg-white text-black border-white" : "border-white/20 text-gray-300 hover:border-white hover:text-white"}`}
+                className={`px-6 py-2 rounded-full border text-sm font-semibold transition-all ${filter === f ? "bg-white text-[#19002a] border-white" : "border-white/20 text-gray-300 hover:border-white hover:text-white"}`}
               >
                 {f}
               </button>
@@ -51,11 +51,11 @@ export default function OurWorks() {
       </AnimatedSection>
 
       {/* Gallery */}
-      <div className="py-24 px-6 bg-gray-50">
+      <div className="py-24 px-6 bg-transparent">
         <div className="container mx-auto max-w-[1400px]">
           <div className="columns-1 md:columns-2 lg:columns-3 gap-10 space-y-10">
             {displayedProjects.map((project, idx) => (
-              <AnimatedSection key={idx} direction="up" delay={idx * 0.1} className="group cursor-pointer overflow-hidden shadow-md block h-auto w-full border border-black/5 break-inside-avoid">
+              <AnimatedSection key={idx} direction="up" delay={idx * 0.1} className="group cursor-pointer overflow-hidden shadow-md block h-auto w-full border border-white/10 break-inside-avoid">
                 <div className="w-full h-full flex items-center justify-center transition-transform duration-700 group-hover:scale-105">
                   <img 
                     src={project.image} 
@@ -71,7 +71,7 @@ export default function OurWorks() {
             <AnimatedSection direction="up" className="mt-20 text-center">
               <button 
                 onClick={() => setVisibleCount(prev => prev + 6)}
-                className="bg-white border-2 border-black text-black px-10 py-4 rounded-full font-bold text-lg hover:bg-black hover:text-white transition-colors duration-300"
+                className="bg-white/10 border-2 border-white/20 text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-[#19002a] transition-colors duration-300"
               >
                 Load More Projects
               </button>

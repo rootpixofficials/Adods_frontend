@@ -40,10 +40,10 @@ const Testimonial = () => {
   const currentT = testimonials[currentIndex];
 
   return (
-    <section className="relative w-full py-20 overflow-hidden bg-white text-black">
+    <section className="relative w-full py-20 overflow-hidden bg-transparent text-white">
       {/* Background Dot Pattern */}
-      <div className="absolute inset-0 z-0 opacity-20 pointer-events-none" 
-           style={{ backgroundImage: 'radial-gradient(circle, #000 1.5px, transparent 1.5px)', backgroundSize: '24px 24px' }}>
+      <div className="absolute inset-0 z-0 opacity-10 pointer-events-none" 
+           style={{ backgroundImage: 'radial-gradient(circle, #fff 1.5px, transparent 1.5px)', backgroundSize: '24px 24px' }}>
       </div>
 
       <div className="container mx-auto px-6 relative z-10 max-w-6xl">
@@ -55,18 +55,18 @@ const Testimonial = () => {
             <div className="flex flex-col flex-grow">
               {/* Header Area */}
               <div className="flex flex-col items-start text-left mb-10 md:mb-20 relative">
-                <span className="px-5 py-1.5 text-xs font-semibold tracking-[0.2em] uppercase border border-gray-300 rounded-[30px] mb-8 hover:bg-black hover:text-white transition-colors duration-300">
+                <span className="px-5 py-1.5 text-xs font-semibold tracking-[0.2em] uppercase border border-white/20 text-gray-300 rounded-[30px] mb-8 hover:bg-white hover:text-[#19002a] transition-colors duration-300">
                   Reviews
                 </span>
-                <h2 className="text-3xl sm:text-[2.5rem] md:text-5xl lg:text-[4rem] font-bold leading-[1.05] tracking-tight max-w-2xl text-black">
+                <h2 className="text-3xl sm:text-[2.5rem] md:text-5xl lg:text-[4rem] font-bold leading-[1.05] tracking-tight max-w-2xl text-white">
                   Here's what people say about our work
                 </h2>
               </div>
               
               {/* Testimonial Area */}
               <div className="flex flex-col relative mb-10 md:mb-16 min-h-[180px]">
-                {/* Quote Icon — inline on mobile, absolute on md+ */}
-                <svg className="w-10 h-10 md:w-14 md:h-14 text-black mb-3 md:mb-0 md:absolute md:-left-10 md:-top-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                {/* Quote Icon */}
+                <svg className="w-10 h-10 md:w-14 md:h-14 text-white/20 mb-3 md:mb-0 md:absolute md:-left-10 md:-top-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" 
                     d="M10 11V8C10 6.89543 9.10457 6 8 6H6C4.89543 6 4 6.89543 4 8V11C4 12.1046 4.89543 13 6 13H8C5.5 13.5 4 15 4 17.5" />
                   <path stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" 
@@ -74,11 +74,11 @@ const Testimonial = () => {
                 </svg>
 
                 <div key={`text-${currentT.id}`} className="animate-[fadeIn_0.5s_ease-in-out] md:pl-2">
-                  <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-500 leading-[1.6] font-normal mb-8 z-10 relative">
+                  <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 leading-[1.6] font-normal mb-8 z-10 relative">
                     {currentT.text}
                   </p>
                   <div className="flex flex-col mt-4">
-                    <span className="font-semibold text-lg text-black">{currentT.name}</span>
+                    <span className="font-semibold text-lg text-white">{currentT.name}</span>
                     <span className="text-gray-400 text-sm mt-0.5">{currentT.role}</span>
                   </div>
                 </div>
@@ -91,7 +91,7 @@ const Testimonial = () => {
               <div className="flex items-center space-x-4">
                 <button 
                   onClick={prevTestimonial}
-                  className="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center hover:bg-black hover:text-white hover:border-black transition-all duration-300"
+                  className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-[#19002a] hover:border-white transition-all duration-300"
                   aria-label="Previous Testimonial"
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -100,7 +100,7 @@ const Testimonial = () => {
                 </button>
                 <button 
                   onClick={nextTestimonial}
-                  className="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center hover:bg-black hover:text-white hover:border-black transition-all duration-300"
+                  className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-[#19002a] hover:border-white transition-all duration-300"
                   aria-label="Next Testimonial"
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -116,7 +116,7 @@ const Testimonial = () => {
                     key={idx}
                     onClick={() => setCurrentIndex(idx)}
                     className={`w-2.5 h-2.5 rounded-full transition-all duration-300 hover:scale-110 ${
-                      currentIndex === idx ? 'bg-black w-6' : 'bg-gray-200 hover:bg-gray-400'
+                      currentIndex === idx ? 'bg-white w-6' : 'bg-white/20 hover:bg-white/40'
                     }`}
                     aria-label={`Go to testimonial ${idx + 1}`}
                   ></button>

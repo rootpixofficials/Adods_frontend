@@ -3,7 +3,7 @@ import Link from "next/link";
 import { allProjects } from "../../data/projects";
 
 const ProjectCard = ({ project }: { project: any }) => (
-  <Link href="/ourworks" className="relative group overflow-hidden shadow-md block h-auto cursor-pointer w-full border border-black/5">
+  <Link href="/ourworks" className="relative group overflow-hidden shadow-md block h-auto cursor-pointer w-full border border-white/10">
     <div className="w-full h-full flex items-center justify-center transition-transform duration-700 group-hover:scale-105">
       <img 
         src={project.image} 
@@ -26,7 +26,7 @@ export default function Projects() {
   const bottomRowProjects = homeProjects.slice(halfLength);
 
   return (
-    <section className="bg-[#fcfcfc] py-24 md:py-32 overflow-hidden relative">
+    <section className="bg-transparent py-24 md:py-32 overflow-hidden relative">
       <style dangerouslySetInnerHTML={{__html: `
         .no-scrollbar::-webkit-scrollbar {
           display: none;
@@ -41,16 +41,16 @@ export default function Projects() {
         
         {/* Header Section */}
         <div className="flex flex-col items-start gap-4 mb-12 lg:mb-16">
-          <span className="inline-block border border-gray-200 rounded-full px-5 py-2 text-[13px] font-semibold text-gray-600 tracking-wide bg-white shadow-sm">
+          <span className="inline-block border border-white/20 rounded-full px-5 py-2 text-[13px] font-semibold text-white tracking-wide bg-white/10 backdrop-blur-sm shadow-sm">
             Portfolio
           </span>
           <div className="max-w-md relative z-20 mt-2">
-            <p className="text-gray-400 text-sm md:text-base leading-[1.8] font-medium">
+            <p className="text-gray-300 text-sm md:text-base leading-[1.8] font-medium">
               {dummyText}
             </p>
           </div>
           <div className="max-w-2xl text-left mt-2">
-            <h2 className="text-[36px] md:text-5xl lg:text-[52px] font-bold leading-[1.12] text-[#111] tracking-tight">
+            <h2 className="text-[36px] md:text-5xl lg:text-[52px] font-bold leading-[1.12] text-white tracking-tight">
               Explore our most successful projects
             </h2>
           </div>
@@ -82,7 +82,7 @@ export default function Projects() {
 
       {/* CTA Button Bottom Right */}
       <div className="container mx-auto px-6 md:px-12 max-w-7xl relative z-20 flex justify-end mt-4">
-        <Link href="/ourworks" className="bg-[#18181b] text-white px-8 py-4 rounded-full font-bold text-[15px] flex items-center gap-3 hover:bg-black transition-colors shadow-xl group">
+        <Link href="/ourworks" className="bg-white text-[#19002a] px-8 py-4 rounded-full font-bold text-[15px] flex items-center gap-3 hover:bg-gray-200 transition-colors shadow-xl group">
           See all projects
           <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
             <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
