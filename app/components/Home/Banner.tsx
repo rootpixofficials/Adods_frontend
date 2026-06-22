@@ -7,12 +7,7 @@ export default function Banner() {
   return (
     <section className="bg-transparent pt-24 pb-10 md:pt-32 overflow-hidden relative">
 
-      {/* Minimal Animated Background Elements */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-purple-100/50 rounded-full blur-[100px] animate-blob mix-blend-multiply opacity-70"></div>
-        <div className="absolute top-[20%] right-[-10%] w-[40%] h-[50%] bg-pink-100/50 rounded-full blur-[100px] animate-blob animation-delay-2000 mix-blend-multiply opacity-70"></div>
-        <div className="absolute bottom-[-20%] left-[20%] w-[50%] h-[50%] bg-blue-100/40 rounded-full blur-[100px] animate-blob animation-delay-4000 mix-blend-multiply opacity-70"></div>
-      </div>
+      {/* Minimal Animated Background Elements Removed for cleaner gradient */}
 
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
