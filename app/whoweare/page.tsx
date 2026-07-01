@@ -11,10 +11,9 @@ export default function WhoWeAre() {
   ];
 
   const team = [
-    { name: "Eleanor Pena", role: "Chief Executive Officer", image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
-    { name: "Jerome Bell", role: "Head of Design", image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
-    { name: "Kathryn Murphy", role: "Lead Developer", image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
-    { name: "Courtney Henry", role: "Marketing Director", image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" }
+    { name: "Minhaj", role: "CEO and Founder", image: "/images/minhaj.jpg", objectPosition: "object-center" },
+    { name: "Ajmal TP", role: "Co-founder", image: "/images/ajmal.jpg", objectPosition: "object-top" },
+    { name: "Faris", role: "Co-founder", image: "/images/faris.jpg", objectPosition: "object-top" }
   ];
 
   return (
@@ -79,11 +78,11 @@ export default function WhoWeAre() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {team.map((member, idx) => (
               <div key={idx} className="group relative rounded-[2rem] overflow-hidden bg-white/5 border border-white/10 backdrop-blur-md shadow-sm hover:shadow-2xl transition-all duration-500">
                 <div className="aspect-[4/5] overflow-hidden">
-                  <img src={member.image} alt={member.name} className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" />
+                  <img src={member.image} alt={member.name} className={`w-full h-full object-cover ${member.objectPosition} filter grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110`} />
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 via-black/50 to-transparent text-white translate-y-4 opacity-90 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
                   <h3 className="text-xl font-bold">{member.name}</h3>
